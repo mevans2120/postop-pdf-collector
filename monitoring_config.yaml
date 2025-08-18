@@ -1,0 +1,199 @@
+# PostOp PDF Collector Monitoring Configuration
+
+logging:
+  level: INFO
+  format: json  # standard, json, colored
+  file: ./logs/postop_collector.log
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+  enable_console: true
+  enable_file: true
+  enable_syslog: false
+
+metrics:
+  enabled: true
+  flush_interval: 60  # seconds
+  export_path: ./metrics/metrics.jsonl
+  
+  # Prometheus settings
+  prometheus:
+    enabled: true
+    port: 9090
+    path: /metrics
+  
+  # StatsD settings (optional)
+  statsd:
+    enabled: false
+    host: localhost
+    port: 8125
+    prefix: postop
+
+alerts:
+  enabled: true
+  
+  # Email alerts
+  email:
+    enabled: false
+    smtp_host: smtp.gmail.com
+    smtp_port: 587
+    smtp_tls: true
+    smtp_user: alerts@example.com
+    smtp_password: ${SMTP_PASSWORD}
+    from: alerts@example.com
+    to:
+      - admin@example.com
+      - ops@example.com
+  
+  # Slack alerts
+  slack:
+    enabled: false
+    webhook_url: ${SLACK_WEBHOOK_URL}
+    channel: "#alerts"
+    username: PostOp Bot
+  
+  # Webhook alerts
+  webhook:
+    enabled: false
+    url: ${ALERT_WEBHOOK_URL}
+    headers:
+      Authorization: Bearer ${WEBHOOK_TOKEN}
+  
+  # Alert rules
+  rules:
+    - name: high_error_rate
+      type: threshold
+      metric: errors.count
+      threshold: 100
+      operator: ">"
+      window: 300  # 5 minutes
+      severity: error
+      
+    - name: low_success_rate
+      type: threshold
+      metric: collection.success_rate
+      threshold: 0.5
+      operator: "<"
+      window: 3600  # 1 hour
+      severity: warning
+      
+    - name: database_connection_failures
+      type: threshold
+      metric: database.connection_errors
+      threshold: 5
+      operator: ">"
+      window: 60
+      severity: critical
+      
+    - name: high_memory_usage
+      type: threshold
+      metric: system.memory_percent
+      threshold: 90
+      operator: ">"
+      window: 300
+      severity: warning
+      
+    - name: slow_api_response
+      type: threshold
+      metric: api.response_time_p95
+      threshold: 5000  # 5 seconds
+      operator: ">"
+      window: 600
+      severity: warning
+      
+    - name: storage_space_low
+      type: threshold
+      metric: storage.available_gb
+      threshold: 10
+      operator: "<"
+      window: 3600
+      severity: warning
+
+# Health checks
+health_checks:
+  enabled: true
+  interval: 30  # seconds
+  
+  checks:
+    - name: database
+      type: database
+      timeout: 5
+      
+    - name: api
+      type: http
+      url: http://localhost:8000/health
+      timeout: 10
+      
+    - name: storage
+      type: disk
+      path: ./data
+      min_free_gb: 5
+      
+    - name: memory
+      type: memory
+      max_percent: 95
+
+# Performance monitoring
+performance:
+  enabled: true
+  
+  # Slow query logging
+  slow_query_threshold: 1000  # milliseconds
+  
+  # Request tracing
+  trace_sample_rate: 0.1  # 10% of requests
+  
+  # Profile settings
+  profiling:
+    enabled: false
+    output_dir: ./profiles
+    interval: 60  # seconds
+
+# Integration with external monitoring tools
+integrations:
+  # Datadog
+  datadog:
+    enabled: false
+    api_key: ${DATADOG_API_KEY}
+    app_key: ${DATADOG_APP_KEY}
+    host: https://api.datadoghq.com
+    
+  # New Relic
+  newrelic:
+    enabled: false
+    license_key: ${NEW_RELIC_LICENSE_KEY}
+    app_name: postop-pdf-collector
+    
+  # Sentry for error tracking
+  sentry:
+    enabled: false
+    dsn: ${SENTRY_DSN}
+    environment: production
+    traces_sample_rate: 0.1
+    
+  # Grafana Cloud
+  grafana:
+    enabled: false
+    prometheus_url: ${GRAFANA_PROMETHEUS_URL}
+    api_key: ${GRAFANA_API_KEY}
+
+# Log aggregation
+log_aggregation:
+  # Elasticsearch
+  elasticsearch:
+    enabled: false
+    hosts:
+      - http://localhost:9200
+    index: postop-logs
+    
+  # Logstash
+  logstash:
+    enabled: false
+    host: localhost
+    port: 5000
+    
+  # CloudWatch (AWS)
+  cloudwatch:
+    enabled: false
+    region: us-east-1
+    log_group: /aws/postop-collector
+    log_stream: api

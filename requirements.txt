@@ -1,0 +1,44 @@
+# Core dependencies
+aiohttp>=3.9.0
+pydantic>=2.0.0
+beautifulsoup4>=4.12.0
+python-dotenv>=1.0.0
+
+# PDF processing
+PyPDF2>=3.0.0
+pdfplumber>=0.10.0
+pymupdf>=1.23.0  # For PDF rendering and OCR preparation
+Pillow>=10.0.0  # For image processing
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
+
+# Development tools
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+isort>=5.12.0
+
+# Database support
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0  # PostgreSQL adapter
+
+# API support
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+httpx>=0.24.0  # For async HTTP client in tests
+python-multipart>=0.0.6  # For file uploads
+
+# Monitoring and metrics
+prometheus-client>=0.17.0
+psutil>=5.9.0  # For system metrics
+
+# Optional: for advanced features
+# pytesseract>=0.3.10  # For OCR (requires tesseract binary)
+# pandas>=2.0.0  # For advanced table extraction
+# redis>=5.0.0  # For distributed caching and rate limiting
+# spacy>=3.0.0  # For advanced NLP
+# transformers>=4.0.0  # For ML-based classification
