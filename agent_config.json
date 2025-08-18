@@ -1,0 +1,205 @@
+{
+  "agent_settings": {
+    "name": "PostOp PDF Collector Agent",
+    "version": "1.0.0",
+    "description": "Autonomous agent for collecting and analyzing post-operative instruction PDFs",
+    "capabilities": [
+      "autonomous_collection",
+      "intelligent_search",
+      "quality_assessment",
+      "gap_analysis",
+      "scheduled_operations"
+    ]
+  },
+  
+  "collection_strategy": {
+    "default_queries": [
+      "post operative care instructions pdf",
+      "surgery recovery guidelines pdf",
+      "patient discharge instructions pdf",
+      "post surgical care guide pdf",
+      "aftercare instructions medical pdf"
+    ],
+    
+    "procedure_priorities": [
+      {
+        "type": "orthopedic",
+        "priority": "high",
+        "target_count": 20,
+        "specific_queries": [
+          "knee replacement post op care pdf",
+          "hip surgery recovery instructions pdf",
+          "spine surgery aftercare pdf"
+        ]
+      },
+      {
+        "type": "cardiac",
+        "priority": "high",
+        "target_count": 20,
+        "specific_queries": [
+          "cardiac surgery recovery pdf",
+          "heart surgery post operative care pdf",
+          "bypass surgery aftercare instructions pdf"
+        ]
+      },
+      {
+        "type": "general",
+        "priority": "medium",
+        "target_count": 15,
+        "specific_queries": [
+          "general surgery post op instructions pdf",
+          "laparoscopic surgery recovery pdf"
+        ]
+      },
+      {
+        "type": "neurological",
+        "priority": "medium",
+        "target_count": 10,
+        "specific_queries": [
+          "brain surgery recovery instructions pdf",
+          "neurosurgery post operative care pdf"
+        ]
+      }
+    ],
+    
+    "quality_thresholds": {
+      "minimum_confidence": 0.6,
+      "preferred_confidence": 0.8,
+      "minimum_text_length": 500,
+      "required_sections": [
+        "medications",
+        "warning_signs",
+        "timeline"
+      ]
+    },
+    
+    "collection_rules": {
+      "max_pdfs_per_source": 10,
+      "max_pdfs_per_run": 50,
+      "max_file_size_mb": 20,
+      "avoid_duplicates": true,
+      "prefer_recent": true,
+      "language": "en"
+    }
+  },
+  
+  "autonomous_behavior": {
+    "enabled": true,
+    "schedule": {
+      "interval_hours": 24,
+      "active_hours": {
+        "start": "02:00",
+        "end": "06:00"
+      },
+      "max_iterations": 30
+    },
+    
+    "adaptive_learning": {
+      "track_success_rates": true,
+      "adjust_queries": true,
+      "learn_from_failures": true,
+      "optimize_sources": true
+    },
+    
+    "decision_logic": {
+      "when_to_collect": [
+        {"condition": "pdfs_count < 100", "action": "aggressive_collection"},
+        {"condition": "average_confidence < 0.7", "action": "quality_improvement"},
+        {"condition": "gaps_detected", "action": "targeted_collection"},
+        {"condition": "scheduled_time", "action": "routine_collection"}
+      ],
+      
+      "collection_modes": {
+        "aggressive_collection": {
+          "max_pdfs": 100,
+          "quality_threshold": 0.5,
+          "parallel_searches": 5
+        },
+        "quality_improvement": {
+          "max_pdfs": 30,
+          "quality_threshold": 0.8,
+          "verify_sources": true
+        },
+        "targeted_collection": {
+          "max_pdfs": 50,
+          "quality_threshold": 0.7,
+          "focus_on_gaps": true
+        },
+        "routine_collection": {
+          "max_pdfs": 20,
+          "quality_threshold": 0.7,
+          "update_existing": true
+        }
+      }
+    }
+  },
+  
+  "api_settings": {
+    "base_url": "http://localhost:8000",
+    "timeout": 30,
+    "retry_attempts": 3,
+    "rate_limit": {
+      "requests_per_second": 2,
+      "burst_size": 10
+    }
+  },
+  
+  "storage_settings": {
+    "output_directory": "./agent_output",
+    "database_url": "sqlite:///./data/agent_collector.db",
+    "max_storage_gb": 10,
+    "cleanup_policy": {
+      "remove_low_quality": true,
+      "quality_threshold": 0.4,
+      "max_age_days": 90
+    }
+  },
+  
+  "monitoring": {
+    "log_level": "INFO",
+    "log_file": "./agent_logs/agent.log",
+    "metrics": {
+      "track_collections": true,
+      "track_quality": true,
+      "track_performance": true
+    },
+    "alerts": {
+      "email": null,
+      "webhook": null,
+      "log_critical": true
+    }
+  },
+  
+  "integration": {
+    "claude_instructions": {
+      "description": "Instructions for Claude or other AI agents",
+      "setup": [
+        "1. Install dependencies: pip install -r requirements.txt",
+        "2. Set environment variables for API keys",
+        "3. Initialize database: python -c 'from postop_collector.storage.database import init_database, create_database_engine; engine = create_database_engine(); init_database(engine)'",
+        "4. Run agent: python agent_interface.py --action autonomous --duration 24"
+      ],
+      "commands": {
+        "collect": "python agent_interface.py --action collect --queries 'knee surgery pdf' --max-pdfs 20",
+        "analyze": "python agent_interface.py --action analyze",
+        "search": "python agent_interface.py --action search --queries 'cardiac recovery'",
+        "status": "python agent_interface.py --action status",
+        "autonomous": "python agent_interface.py --action autonomous --duration 48"
+      },
+      "environment_variables": {
+        "GOOGLE_API_KEY": "Required for web search",
+        "GOOGLE_SEARCH_ENGINE_ID": "Required for web search",
+        "DATABASE_URL": "Optional, defaults to SQLite",
+        "LOG_LEVEL": "Optional, defaults to INFO"
+      }
+    },
+    
+    "api_endpoints": {
+      "start_collection": "POST /api/v1/collection/start",
+      "get_status": "GET /api/v1/collection/runs/{run_id}",
+      "search_pdfs": "POST /api/v1/search/",
+      "get_statistics": "GET /api/v1/statistics/",
+      "health_check": "GET /health"
+    }
+  }
+}
