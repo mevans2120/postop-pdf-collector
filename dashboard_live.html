@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PostOp PDF Collector - Live Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #718096;
+            font-size: 1.1em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            color: #4a5568;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        .procedure-btn {
+            margin: 3px;
+            padding: 8px 12px;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .procedure-btn:hover {
+            background: #cbd5e0;
+        }
+        .selected-tag {
+            display: inline-block;
+            margin: 3px;
+            padding: 5px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .selected-tag .remove {
+            margin-left: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-green {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+        .btn-red {
+            background: linear-gradient(135deg, #f56565 0%, #ed8936 100%);
+        }
+        .selected-box {
+            min-height: 60px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 10px;
+            background: #f7f3ff;
+        }
+        .procedures-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+            background: #fff;
+        }
+        .terminal {
+            background: #1a202c;
+            color: #68d391;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+            height: 500px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .terminal-line {
+            margin: 2px 0;
+            line-height: 1.4;
+        }
+        .terminal-info { color: #4299e1; }
+        .terminal-success { color: #68d391; }
+        .terminal-warning { color: #f6ad55; }
+        .terminal-error { color: #fc8181; }
+        .progress-bar {
+            background: #e2e8f0;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 10px;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            color: #718096;
+            margin-top: 5px;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .pulsing {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 PostOp PDF Collector - Live Dashboard</h1>
+            <div class="subtitle">Real-time collection monitoring with terminal output</div>
+        </div>
+
+        <div class="grid">
+            <!-- Control Panel -->
+            <div class="card">
+                <h2>🎮 Collection Control</h2>
+                
+                <div class="form-group">
+                    <label>1. Select Surgical Category</label>
+                    <select id="category" onchange="showProcedures()">
+                        <option value="">-- Choose Category --</option>
+                        <option value="orthopedic">Orthopedic Surgery</option>
+                        <option value="cardiac">Cardiac Surgery</option>
+                        <option value="general">General Surgery</option>
+                        <option value="neurological">Neurosurgery</option>
+                        <option value="urological">Urology</option>
+                        <option value="gynecological">Gynecological Surgery</option>
+                        <option value="ent">ENT Surgery</option>
+                        <option value="ophthalmic">Ophthalmology</option>
+                        <option value="plastic">Plastic Surgery</option>
+                        <option value="dental">Oral Surgery</option>
+                        <option value="vascular">Vascular Surgery</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="proceduresList" style="display: none;">
+                    <label>2. Click Procedures to Add</label>
+                    <div class="procedures-list" id="availableProcedures"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Selected Procedures (<span id="selectedCount">0</span>)</label>
+                    <div class="selected-box" id="selectedProcedures">
+                        <span style="color: #999;">No procedures selected</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Maximum PDFs</label>
+                    <input type="number" id="maxPdfs" value="20" min="1" max="100">
+                </div>
+
+                <button class="btn btn-green" onclick="selectCommon()">⭐ Common Procedures</button>
+                <button class="btn" onclick="clearAll()">🗑️ Clear</button>
+                <button class="btn" onclick="clearTerminalAndStats()" style="background: linear-gradient(135deg, #9F7AEA 0%, #6B46C1 100%);">🧹 Clear Terminal</button>
+                <br>
+                <button id="startBtn" class="btn" onclick="startCollection()" style="width: 200px;">
+                    🚀 Start Collection
+                </button>
+                <button id="stopBtn" class="btn btn-red" onclick="stopCollection()" style="display: none; width: 200px;">
+                    ⏹ Stop Collection
+                </button>
+            </div>
+
+            <!-- Live Terminal Output -->
+            <div class="card">
+                <h2>📟 Live Collection Output</h2>
+                
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar" style="width: 0%">
+                        <span id="progressText">Ready</span>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="pdfsFound">0</div>
+                        <div class="stat-label">PDFs Found</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="pdfsCollected">0</div>
+                        <div class="stat-label">Collected</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="avgConfidence">0%</div>
+                        <div class="stat-label">Avg Confidence</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="elapsedTime">0s</div>
+                        <div class="stat-label">Time Elapsed</div>
+                    </div>
+                </div>
+
+                <!-- Terminal -->
+                <div class="terminal" id="terminal">
+                    <div class="terminal-line terminal-info">📟 Terminal ready. Select procedures and click Start Collection to begin...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Procedure database
+        const procedures = {
+            orthopedic: [
+                "Total Knee Replacement", "Total Hip Replacement", "ACL Reconstruction",
+                "Rotator Cuff Repair", "Spinal Fusion", "Carpal Tunnel Release",
+                "Meniscus Repair", "Shoulder Arthroscopy", "Ankle Fracture Repair"
+            ],
+            cardiac: [
+                "Coronary Artery Bypass", "Heart Valve Replacement", "Pacemaker Implantation",
+                "Angioplasty and Stenting", "Atrial Fibrillation Ablation", "Heart Transplant"
+            ],
+            general: [
+                "Appendectomy", "Gallbladder Removal", "Hernia Repair",
+                "Colonoscopy", "Hemorrhoidectomy", "Thyroidectomy", "Mastectomy"
+            ],
+            neurological: [
+                "Craniotomy", "Brain Tumor Removal", "Spinal Cord Surgery",
+                "Deep Brain Stimulation", "Epilepsy Surgery", "Lumbar Puncture"
+            ],
+            urological: [
+                "Prostatectomy", "TURP", "Kidney Stone Removal",
+                "Cystoscopy", "Vasectomy", "Bladder Surgery"
+            ],
+            gynecological: [
+                "Hysterectomy", "C-Section", "Ovarian Cyst Removal",
+                "Endometrial Ablation", "Myomectomy", "Tubal Ligation"
+            ],
+            ent: [
+                "Tonsillectomy", "Adenoidectomy", "Septoplasty",
+                "Sinus Surgery", "Tympanoplasty", "Cochlear Implant"
+            ],
+            ophthalmic: [
+                "Cataract Surgery", "LASIK", "Glaucoma Surgery",
+                "Retinal Detachment Repair", "Corneal Transplant", "Vitrectomy"
+            ],
+            plastic: [
+                "Rhinoplasty", "Breast Augmentation", "Liposuction",
+                "Tummy Tuck", "Facelift", "Blepharoplasty"
+            ],
+            dental: [
+                "Wisdom Teeth Extraction", "Dental Implants", "Root Canal",
+                "Tooth Extraction", "Jaw Surgery", "Gum Surgery"
+            ],
+            vascular: [
+                "Carotid Endarterectomy", "Aneurysm Repair", "Varicose Vein Surgery",
+                "Bypass Surgery", "Thrombectomy", "Angioplasty"
+            ]
+        };
+
+        let selectedProcedures = [];
+        let collectionInterval = null;
+        let startTime = null;
+        let ws = null;
+        let pdfsFound = 0;
+        let pdfsCollected = 0;
+
+        function connectWebSocket() {
+            ws = new WebSocket('ws://localhost:8001/ws');
+            
+            ws.onmessage = function(event) {
+                const message = JSON.parse(event.data);
+                handleWebSocketMessage(message);
+            };
+            
+            ws.onclose = function() {
+                setTimeout(connectWebSocket, 3000);
+            };
+        }
+
+        function handleWebSocketMessage(message) {
+            if (message.type === 'log') {
+                addTerminalLine(message.level, message.text);
+            } else if (message.type === 'progress') {
+                updateProgress(message.data);
+            } else if (message.type === 'collection_started') {
+                addTerminalLine('info', '🚀 Collection started: ' + message.data.run_id);
+                updateStats();
+            } else if (message.type === 'collection_completed') {
+                addTerminalLine('success', `🎉 Collection completed: ${message.data.pdfs_collected} PDFs collected`);
+                document.getElementById('startBtn').style.display = 'inline-block';
+                document.getElementById('stopBtn').style.display = 'none';
+                updateStats();
+                updateProgress(100);
+            } else if (message.type === 'pdf_found') {
+                pdfsFound++;
+                document.getElementById('pdfsFound').textContent = pdfsFound;
+                addTerminalLine('info', `Found: ${message.data.url}`);
+            } else if (message.type === 'pdf_collected') {
+                pdfsCollected++;
+                document.getElementById('pdfsCollected').textContent = pdfsCollected;
+                const conf = (message.data.confidence * 100).toFixed(0);
+                addTerminalLine('success', `✅ Collected: ${message.data.filename} (${conf}% confidence)`);
+            }
+        }
+
+        function showProcedures() {
+            const category = document.getElementById('category').value;
+            const listDiv = document.getElementById('proceduresList');
+            const procDiv = document.getElementById('availableProcedures');
+            
+            if (category && procedures[category]) {
+                listDiv.style.display = 'block';
+                procDiv.innerHTML = '';
+                
+                procedures[category].forEach(proc => {
+                    const btn = document.createElement('button');
+                    btn.className = 'procedure-btn';
+                    btn.textContent = proc;
+                    btn.onclick = () => addProcedure(proc);
+                    procDiv.appendChild(btn);
+                });
+            } else {
+                listDiv.style.display = 'none';
+            }
+        }
+
+        function addProcedure(proc) {
+            if (!selectedProcedures.includes(proc)) {
+                selectedProcedures.push(proc);
+                updateDisplay();
+                addTerminalLine('info', `➕ Added procedure: ${proc}`);
+            }
+        }
+
+        function removeProcedure(proc) {
+            selectedProcedures = selectedProcedures.filter(p => p !== proc);
+            updateDisplay();
+            addTerminalLine('info', `➖ Removed procedure: ${proc}`);
+        }
+
+        function updateDisplay() {
+            const selectedDiv = document.getElementById('selectedProcedures');
+            const countSpan = document.getElementById('selectedCount');
+            
+            countSpan.textContent = selectedProcedures.length;
+            
+            if (selectedProcedures.length === 0) {
+                selectedDiv.innerHTML = '<span style="color: #999;">No procedures selected</span>';
+            } else {
+                selectedDiv.innerHTML = selectedProcedures.map(proc => 
+                    `<span class="selected-tag">${proc} <span class="remove" onclick="removeProcedure('${proc}')">✕</span></span>`
+                ).join('');
+            }
+        }
+
+        function selectCommon() {
+            selectedProcedures = [
+                "Total Knee Replacement", "Total Hip Replacement", 
+                "Cataract Surgery", "Gallbladder Removal", 
+                "Hernia Repair", "Appendectomy", "C-Section", 
+                "Hysterectomy", "Tonsillectomy", "Coronary Artery Bypass"
+            ];
+            updateDisplay();
+            addTerminalLine('success', `✅ Added ${selectedProcedures.length} common procedures`);
+        }
+
+        function clearAll() {
+            selectedProcedures = [];
+            updateDisplay();
+            addTerminalLine('info', '🗑️ Cleared all selected procedures');
+        }
+        
+        function clearTerminalAndStats() {
+            // Clear terminal
+            clearTerminal();
+            
+            // Reset stats
+            pdfsFound = 0;
+            pdfsCollected = 0;
+            document.getElementById('pdfsFound').textContent = '0';
+            document.getElementById('pdfsCollected').textContent = '0';
+            document.getElementById('avgConfidence').textContent = '0%';
+            document.getElementById('elapsedTime').textContent = '0s';
+            
+            // Reset progress bar
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            progressBar.style.width = '0%';
+            progressText.textContent = 'Ready';
+            
+            // Clear timer
+            startTime = null;
+            
+            addTerminalLine('info', '🧹 Terminal and statistics cleared');
+        }
+
+        function addTerminalLine(level, text) {
+            const terminal = document.getElementById('terminal');
+            const line = document.createElement('div');
+            const timestamp = new Date().toLocaleTimeString();
+            
+            line.className = `terminal-line terminal-${level}`;
+            
+            // Parse and format the line
+            if (text.includes('Searching for:')) {
+                line.innerHTML = `[${timestamp}] 🔍 ${text}`;
+            } else if (text.includes('Analyzed') && text.includes('confidence:')) {
+                const confidence = text.match(/confidence: ([\d.]+)/);
+                const quality = text.match(/quality: (\w+)/);
+                if (confidence) {
+                    const conf = parseFloat(confidence[1]);
+                    const emoji = conf >= 0.8 ? '⭐⭐⭐' : conf >= 0.6 ? '⭐⭐' : '⭐';
+                    line.innerHTML = `[${timestamp}] ${emoji} ${text}`;
+                } else {
+                    line.innerHTML = `[${timestamp}] ${text}`;
+                }
+            } else if (text.includes('Skipping')) {
+                line.innerHTML = `[${timestamp}] ⏭️ ${text}`;
+            } else if (text.includes('ERROR') || text.includes('Failed')) {
+                line.innerHTML = `[${timestamp}] ❌ ${text}`;
+            } else if (text.includes('WARNING')) {
+                line.innerHTML = `[${timestamp}] ⚠️ ${text}`;
+            } else if (text.includes('Collection completed')) {
+                line.innerHTML = `[${timestamp}] 🎉 ${text}`;
+            } else {
+                line.innerHTML = `[${timestamp}] ${text}`;
+            }
+            
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+            
+            // Keep only last 100 lines
+            while (terminal.children.length > 100) {
+                terminal.removeChild(terminal.firstChild);
+            }
+        }
+
+        function clearTerminal() {
+            const terminal = document.getElementById('terminal');
+            terminal.innerHTML = '';
+        }
+
+        function updateProgress(percent) {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            
+            progressBar.style.width = percent + '%';
+            progressText.textContent = percent + '%';
+        }
+
+        function startCollection() {
+            if (selectedProcedures.length === 0) {
+                alert('Please select at least one procedure');
+                return;
+            }
+            
+            const queries = [];
+            selectedProcedures.forEach(proc => {
+                queries.push(`"${proc}" post operative care instructions pdf`);
+                queries.push(`"${proc}" recovery guidelines pdf`);
+            });
+            
+            const maxPdfs = document.getElementById('maxPdfs').value;
+            
+            // Update UI
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('stopBtn').style.display = 'inline-block';
+            clearTerminal();
+            
+            // Start timer
+            startTime = Date.now();
+            updateTimer();
+            
+            addTerminalLine('info', '🚀 Starting collection...');
+            addTerminalLine('info', `📋 Selected procedures: ${selectedProcedures.join(', ')}`);
+            addTerminalLine('info', `🔍 Generated ${queries.length} search queries`);
+            addTerminalLine('info', `📊 Maximum PDFs: ${maxPdfs}`);
+            addTerminalLine('info', '');
+            
+            // Real API call
+            fetch('http://localhost:8001/api/start-collection', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    search_queries: queries,
+                    max_pdfs: parseInt(maxPdfs)
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addTerminalLine('success', '✅ Collection task started');
+                pollCollectionStatus();
+            })
+            .catch(error => {
+                addTerminalLine('error', 'Error: ' + error.message);
+                document.getElementById('startBtn').style.display = 'inline-block';
+                document.getElementById('stopBtn').style.display = 'none';
+            });
+        }
+
+
+        function stopCollection() {
+            fetch('http://localhost:8001/api/stop-collection', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                addTerminalLine('warning', '⏹ Collection stopped by user');
+                document.getElementById('startBtn').style.display = 'inline-block';
+                document.getElementById('stopBtn').style.display = 'none';
+            })
+            .catch(error => {
+                addTerminalLine('error', 'Error stopping collection: ' + error.message);
+            });
+        }
+
+        function updateTimer() {
+            if (startTime) {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60);
+                const seconds = elapsed % 60;
+                document.getElementById('elapsedTime').textContent = 
+                    minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+                
+                if (document.getElementById('stopBtn').style.display !== 'none') {
+                    setTimeout(updateTimer, 1000);
+                }
+            }
+        }
+        
+        function pollCollectionStatus() {
+            fetch('http://localhost:8001/api/status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.is_running) {
+                        setTimeout(pollCollectionStatus, 2000);
+                    } else {
+                        updateStats();
+                    }
+                })
+                .catch(error => console.error('Status poll error:', error));
+        }
+        
+        function updateStats() {
+            fetch('http://localhost:8001/api/stats')
+                .then(response => response.json())
+                .then(stats => {
+                    document.getElementById('pdfsFound').textContent = stats.total_pdfs || 0;
+                    document.getElementById('pdfsCollected').textContent = stats.total_pdfs || 0;
+                    document.getElementById('avgConfidence').textContent = 
+                        Math.round((stats.average_confidence || 0) * 100) + '%';
+                })
+                .catch(error => console.error('Stats update error:', error));
+        }
+
+        // Initialize
+        window.onload = function() {
+            connectWebSocket();
+            updateStats();
+            addTerminalLine('info', '✅ Dashboard initialized');
+            addTerminalLine('info', '📡 Ready to connect to collection server at http://localhost:8001');
+        };
+    </script>
+</body>
+</html>

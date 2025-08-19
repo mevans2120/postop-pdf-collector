@@ -1,0 +1,194 @@
+Non-Patient PDFs Identified for Archiving
+============================================================
+
+
+Administrative:
+----------------------------------------
+[100%] ncd103c1_Part1.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[100%] ncd103c1_Part1.pdf
+  Tasks: 5
+
+[80%] DOM_DGIM-FY20_Annual_Report.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[80%] DOM_DGIM-FY20_Annual_Report.pdf
+  Tasks: 0
+
+
+Clinical Guidelines:
+----------------------------------------
+[100%] 2023-CPG-on-the-Management-of-Atherosclerotic-Carotid-and-Vertebral-Artery-Disease.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[100%] 2023-CPG-on-the-Management-of-Atherosclerotic-Carotid-and-Vertebral-Artery-Disease.pdf
+  Tasks: 2
+
+[56%] SHC-Surgical-Prophylaxis-ABX-Guideline.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[56%] SHC-Surgical-Prophylaxis-ABX-Guideline.pdf
+  Tasks: 3
+
+[65%] ASMBS-IFSO-Guidelines-2022-PIIS1550728922006414.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[65%] ASMBS-IFSO-Guidelines-2022-PIIS1550728922006414.pdf
+  Tasks: 1
+
+[84%] anesthesia_and_monitoring_guidelines_final.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[84%] anesthesia_and_monitoring_guidelines_final.pdf
+  Tasks: 6
+
+[92%] 2021-Coronary-Artery-Revascularization-Guideline-Slide-Set.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[92%] 2021-Coronary-Artery-Revascularization-Guideline-Slide-Set.pdf
+  Tasks: 6
+
+[92%] ESVS-2022-CVD-Guidelines.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[92%] ESVS-2022-CVD-Guidelines.pdf
+  Tasks: 11
+
+[94%] guideline-disinfection-h.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[94%] guideline-disinfection-h.pdf
+  Tasks: 2
+
+[96%] ESVS-2024-AAA-Guidelines.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[96%] ESVS-2024-AAA-Guidelines.pdf
+  Tasks: 5
+
+[56%] GIRFT-best-practice-thyroidectomy-Final-20220830.pdf
+  Path: agent_output/organized_pdfs/ENT Surgery/[56%] GIRFT-best-practice-thyroidectomy-Final-20220830.pdf
+  Tasks: 6
+
+[62%] ROBO-INGUINAL-HERNIA-REPAIR-GUIDELINES-1-PAGE.pdf
+  Path: agent_output/organized_pdfs/General Surgery/[62%] ROBO-INGUINAL-HERNIA-REPAIR-GUIDELINES-1-PAGE.pdf
+  Tasks: 18
+
+[84%] DCR-tics-CPG-2020.pdf
+  Path: agent_output/organized_pdfs/General Surgery/[84%] DCR-tics-CPG-2020.pdf
+  Tasks: 9
+
+[48%] knee-tkr-protocol-bwh.pdf
+  Path: agent_output/organized_pdfs/Neurosurgery/[48%] knee-tkr-protocol-bwh.pdf
+  Tasks: 28
+
+[88%] draft-version-cataract-guidelines_extended-document_05-07-2024.pdf
+  Path: agent_output/organized_pdfs/Ophthalmology/[88%] draft-version-cataract-guidelines_extended-document_05-07-2024.pdf
+  Tasks: 2
+
+[47%] meniscus-repair-rehab-protocol.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/Meniscus Repair/[47%] meniscus-repair-rehab-protocol.pdf
+  Tasks: 4
+
+[80%] rehabilitation-protocol-for-meniscus-repair.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/Meniscus Repair/[80%] rehabilitation-protocol-for-meniscus-repair.pdf
+  Tasks: 12
+
+[62%] rehabilitation-protocol-for-rotator-cuff-tear-large-to-massive-tear.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/Rotator Cuff Repair/[62%] rehabilitation-protocol-for-rotator-cuff-tear-large-to-massive-tear.pdf
+  Tasks: 39
+
+[82%] LARGE-ROTATOR-CUFF-REPAIR-PROTOCOL-November-2015.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/Rotator Cuff Repair/[82%] LARGE-ROTATOR-CUFF-REPAIR-PROTOCOL-November-2015.pdf
+  Tasks: 9
+
+[66%] total-hip-arthroplasty-cpg-update-2022.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[66%] total-hip-arthroplasty-cpg-update-2022.pdf
+  Tasks: 14
+
+[96%] THA-Protocol-2019.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[96%] THA-Protocol-2019.pdf
+  Tasks: 44
+
+[55%] TKA%20Rehab%20Protocol.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/Total Knee Replacement/[55%] TKA%20Rehab%20Protocol.pdf
+  Tasks: 11
+
+[56%] TKR-Protocol-Final.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[56%] TKR-Protocol-Final.pdf
+  Tasks: 4
+
+[68%] 6-total-knee-arthroplasty-rehabilitation-guideline.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[68%] 6-total-knee-arthroplasty-rehabilitation-guideline.pdf
+  Tasks: 8
+
+[96%] TKA-Protocol-2019.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[96%] TKA-Protocol-2019.pdf
+  Tasks: 36
+
+[64%] copy_of_CTROPENProtocolandHEP.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[64%] copy_of_CTROPENProtocolandHEP.pdf
+  Tasks: 9
+
+[64%] lhmc-achilles-tendon-rupture-repair-protocol.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[64%] lhmc-achilles-tendon-rupture-repair-protocol.pdf
+  Tasks: 14
+
+[80%] rehabilitation-protocol-for-achilles-tendon-repair.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[80%] rehabilitation-protocol-for-achilles-tendon-repair.pdf
+  Tasks: 32
+
+[92%] patella-ff-protocol.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[92%] patella-ff-protocol.pdf
+  Tasks: 3
+
+[92%] Clinical%20Practice%20Guideline-%20Improving%20Nasal%20Form%20and%20Function%20after%20Rhinoplasty.pdf
+  Path: agent_output/organized_pdfs/Plastic Surgery/Septoplasty/[92%] Clinical%20Practice%20Guideline-%20Improving%20Nasal%20Form%20and%20Function%20after%20Rhinoplasty.pdf
+  Tasks: 3
+
+[70%] Osuch-ACL-Rehab-Protocol.pdf
+  Path: agent_output/organized_pdfs/Uncategorized/[70%] Osuch-ACL-Rehab-Protocol.pdf
+  Tasks: 24
+
+[72%] Shah-ACL-Rehab-Protocol.pdf
+  Path: agent_output/organized_pdfs/Uncategorized/[72%] Shah-ACL-Rehab-Protocol.pdf
+  Tasks: 22
+
+[88%] ortho_guidelines.pdf
+  Path: agent_output/organized_pdfs/Vascular Surgery/[88%] ortho_guidelines.pdf
+  Tasks: 4
+
+[92%] National-Clinical-Guideline-for-Stroke-2023.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[92%] National-Clinical-Guideline-for-Stroke-2023.pdf
+  Tasks: 0
+
+[92%] Septoplasty - Clinical%20Practice%20Guideline-%20Improving%20Nasal%20Form%20and%20Function%20after%20Rhinoplasty.pdf
+  Path: agent_output/organized_pdfs/_High_Quality_PDFs/[92%] Septoplasty - Clinical%20Practice%20Guideline-%20Improving%20Nasal%20Form%20and%20Function%20after%20Rhinoplasty.pdf
+  Tasks: 0
+
+[96%] Total Hip Replacement - THA-Protocol-2019.pdf
+  Path: agent_output/organized_pdfs/_High_Quality_PDFs/[96%] Total Hip Replacement - THA-Protocol-2019.pdf
+  Tasks: 0
+
+[88%] Cataract Surgery - draft-version-cataract-guidelines_extended-document_05-07-2024.pdf
+  Path: agent_output/organized_pdfs/_High_Quality_PDFs/[88%] Cataract Surgery - draft-version-cataract-guidelines_extended-document_05-07-2024.pdf
+  Tasks: 0
+
+[96%] Total Knee Replacement - TKA-Protocol-2019.pdf
+  Path: agent_output/organized_pdfs/_High_Quality_PDFs/[96%] Total Knee Replacement - TKA-Protocol-2019.pdf
+  Tasks: 0
+
+
+Professional/Training:
+----------------------------------------
+[96%] spine-center-pre-op-educational-packet.pdf
+  Path: agent_output/organized_pdfs/Neurosurgery/Spinal Fusion/[96%] spine-center-pre-op-educational-packet.pdf
+  Tasks: 26
+
+[47%] Surgical-society-newsletter-spring-2017.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[47%] Surgical-society-newsletter-spring-2017.pdf
+  Tasks: 8
+
+[47%] team-ovw-webinar-transcript.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[47%] team-ovw-webinar-transcript.pdf
+  Tasks: 3
+
+[96%] Spinal Fusion - spine-center-pre-op-educational-packet.pdf
+  Path: agent_output/organized_pdfs/_High_Quality_PDFs/[96%] Spinal Fusion - spine-center-pre-op-educational-packet.pdf
+  Tasks: 0
+
+
+Provider Resources:
+----------------------------------------
+[47%] cjr-providerfs-finalrule.pdf
+  Path: agent_output/organized_pdfs/Orthopedic Surgery/[47%] cjr-providerfs-finalrule.pdf
+  Tasks: 1
+
+
+Research/Academic:
+----------------------------------------
+[84%] pr-20255---atrial-fibrillation-catheter-acc.pdf
+  Path: agent_output/organized_pdfs/Cardiac Surgery/[84%] pr-20255---atrial-fibrillation-catheter-acc.pdf
+  Tasks: 6
+

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PostOp PDF Collector Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #718096;
+            font-size: 1.1em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            color: #4a5568;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        .procedure-btn {
+            margin: 3px;
+            padding: 8px 12px;
+            background: #e2e8f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .procedure-btn:hover {
+            background: #cbd5e0;
+        }
+        .selected-tag {
+            display: inline-block;
+            margin: 3px;
+            padding: 5px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        .selected-tag .remove {
+            margin-left: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-green {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        }
+        .selected-box {
+            min-height: 60px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 10px;
+            background: #f7f3ff;
+        }
+        .procedures-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+            background: #fff;
+        }
+        #generatedQueries {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            max-height: 150px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 PostOp PDF Collector Dashboard</h1>
+            <div class="subtitle">Select procedures to automatically generate search queries</div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>🎮 Procedure Selection</h2>
+                
+                <div class="form-group">
+                    <label>1. Select Surgical Category</label>
+                    <select id="category" onchange="showProcedures()">
+                        <option value="">-- Choose Category --</option>
+                        <option value="orthopedic">Orthopedic Surgery</option>
+                        <option value="cardiac">Cardiac Surgery</option>
+                        <option value="general">General Surgery</option>
+                        <option value="neurological">Neurosurgery</option>
+                        <option value="urological">Urology</option>
+                        <option value="gynecological">Gynecological Surgery</option>
+                        <option value="ent">ENT Surgery</option>
+                        <option value="ophthalmic">Ophthalmology</option>
+                        <option value="plastic">Plastic Surgery</option>
+                        <option value="dental">Oral Surgery</option>
+                        <option value="vascular">Vascular Surgery</option>
+                        <option value="gi">GI Surgery</option>
+                        <option value="thoracic">Thoracic Surgery</option>
+                        <option value="pediatric">Pediatric Surgery</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="proceduresList" style="display: none;">
+                    <label>2. Click Procedures to Add</label>
+                    <div class="procedures-list" id="availableProcedures"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Selected Procedures</label>
+                    <div class="selected-box" id="selectedProcedures">
+                        <span style="color: #999;">No procedures selected</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-green" onclick="selectCommon()">⭐ Select 10 Common Procedures</button>
+                <button class="btn" onclick="clearAll()">🗑️ Clear All</button>
+            </div>
+
+            <div class="card">
+                <h2>📝 Generated Search Queries</h2>
+                
+                <div class="form-group">
+                    <label>Maximum PDFs to Collect</label>
+                    <input type="number" id="maxPdfs" value="20" min="1" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label>Search Queries (Auto-Generated)</label>
+                    <div id="generatedQueries">Select procedures to generate queries...</div>
+                </div>
+
+                <button class="btn" onclick="startCollection()">🚀 Start Collection</button>
+                <button class="btn" onclick="copyQueries()">📋 Copy Queries</button>
+                
+                <div id="status" style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 8px; display: none;">
+                    <strong>Status:</strong> <span id="statusText">Ready</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Procedure database
+        const procedures = {
+            orthopedic: [
+                "Total Knee Replacement", "Total Hip Replacement", "ACL Reconstruction",
+                "Rotator Cuff Repair", "Spinal Fusion", "Carpal Tunnel Release",
+                "Meniscus Repair", "Shoulder Arthroscopy", "Ankle Fracture Repair",
+                "Bunion Surgery", "Trigger Finger Release"
+            ],
+            cardiac: [
+                "Coronary Artery Bypass", "Heart Valve Replacement", "Pacemaker Implantation",
+                "Angioplasty and Stenting", "Atrial Fibrillation Ablation", "Heart Transplant",
+                "ICD Implantation", "Aortic Aneurysm Repair"
+            ],
+            general: [
+                "Appendectomy", "Gallbladder Removal", "Hernia Repair",
+                "Colonoscopy", "Hemorrhoidectomy", "Thyroidectomy", 
+                "Mastectomy", "Bowel Resection", "Gastric Bypass"
+            ],
+            neurological: [
+                "Craniotomy", "Brain Tumor Removal", "Spinal Cord Surgery",
+                "Deep Brain Stimulation", "Epilepsy Surgery", "Lumbar Puncture",
+                "VP Shunt Placement", "Microdiscectomy"
+            ],
+            urological: [
+                "Prostatectomy", "TURP", "Kidney Stone Removal",
+                "Cystoscopy", "Vasectomy", "Bladder Surgery",
+                "Nephrectomy", "Hydrocele Repair"
+            ],
+            gynecological: [
+                "Hysterectomy", "C-Section", "Ovarian Cyst Removal",
+                "Endometrial Ablation", "Myomectomy", "Tubal Ligation",
+                "D&C Procedure", "Pelvic Floor Repair"
+            ],
+            ent: [
+                "Tonsillectomy", "Adenoidectomy", "Septoplasty",
+                "Sinus Surgery", "Tympanoplasty", "Cochlear Implant",
+                "Thyroid Surgery", "Ear Tube Insertion"
+            ],
+            ophthalmic: [
+                "Cataract Surgery", "LASIK", "Glaucoma Surgery",
+                "Retinal Detachment Repair", "Corneal Transplant", 
+                "Vitrectomy", "Pterygium Removal", "PRK Surgery"
+            ],
+            plastic: [
+                "Rhinoplasty", "Breast Augmentation", "Liposuction",
+                "Tummy Tuck", "Facelift", "Blepharoplasty",
+                "Breast Reduction", "Neck Lift"
+            ],
+            dental: [
+                "Wisdom Teeth Extraction", "Dental Implants", "Root Canal",
+                "Tooth Extraction", "Jaw Surgery", "Gum Surgery",
+                "Bone Grafting", "TMJ Surgery"
+            ],
+            vascular: [
+                "Carotid Endarterectomy", "Aneurysm Repair", "Varicose Vein Surgery",
+                "Bypass Surgery", "Thrombectomy", "Angioplasty",
+                "AV Fistula Creation", "Vein Stripping"
+            ],
+            gi: [
+                "Colonoscopy", "Endoscopy", "Liver Resection",
+                "Pancreatic Surgery", "Esophageal Surgery", 
+                "Stomach Surgery", "Nissen Fundoplication"
+            ],
+            thoracic: [
+                "Lobectomy", "Lung Biopsy", "Thoracotomy",
+                "VATS Surgery", "Mediastinoscopy", "Chest Tube Insertion",
+                "Lung Transplant", "Thymectomy"
+            ],
+            pediatric: [
+                "Appendectomy (Pediatric)", "Hernia Repair (Pediatric)", 
+                "Orchiopexy", "Pyloric Stenosis Repair", 
+                "Tonsillectomy (Pediatric)", "Circumcision", "Ear Tubes"
+            ]
+        };
+
+        let selectedProcedures = [];
+
+        function showProcedures() {
+            const category = document.getElementById('category').value;
+            const listDiv = document.getElementById('proceduresList');
+            const procDiv = document.getElementById('availableProcedures');
+            
+            if (category && procedures[category]) {
+                listDiv.style.display = 'block';
+                procDiv.innerHTML = '';
+                
+                procedures[category].forEach(proc => {
+                    const btn = document.createElement('button');
+                    btn.className = 'procedure-btn';
+                    btn.textContent = proc;
+                    btn.onclick = () => addProcedure(proc);
+                    procDiv.appendChild(btn);
+                });
+            } else {
+                listDiv.style.display = 'none';
+            }
+        }
+
+        function addProcedure(proc) {
+            if (!selectedProcedures.includes(proc)) {
+                selectedProcedures.push(proc);
+                updateDisplay();
+            }
+        }
+
+        function removeProcedure(proc) {
+            selectedProcedures = selectedProcedures.filter(p => p !== proc);
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const selectedDiv = document.getElementById('selectedProcedures');
+            
+            if (selectedProcedures.length === 0) {
+                selectedDiv.innerHTML = '<span style="color: #999;">No procedures selected</span>';
+            } else {
+                selectedDiv.innerHTML = selectedProcedures.map(proc => 
+                    `<span class="selected-tag">${proc} <span class="remove" onclick="removeProcedure('${proc}')">✕</span></span>`
+                ).join('');
+            }
+            
+            updateQueries();
+        }
+
+        function updateQueries() {
+            const queriesDiv = document.getElementById('generatedQueries');
+            
+            if (selectedProcedures.length === 0) {
+                queriesDiv.textContent = 'Select procedures to generate queries...';
+            } else {
+                const queries = [];
+                selectedProcedures.forEach(proc => {
+                    queries.push(`"${proc}" post operative care instructions pdf`);
+                    queries.push(`"${proc}" recovery guidelines pdf`);
+                });
+                queriesDiv.innerHTML = queries.join('<br>');
+            }
+        }
+
+        function selectCommon() {
+            selectedProcedures = [
+                "Total Knee Replacement", "Total Hip Replacement", 
+                "Cataract Surgery", "Gallbladder Removal", 
+                "Hernia Repair", "Appendectomy", "C-Section", 
+                "Hysterectomy", "Tonsillectomy", "Coronary Artery Bypass"
+            ];
+            updateDisplay();
+        }
+
+        function clearAll() {
+            selectedProcedures = [];
+            updateDisplay();
+        }
+
+        function copyQueries() {
+            const queries = [];
+            selectedProcedures.forEach(proc => {
+                queries.push(`"${proc}" post operative care instructions pdf`);
+                queries.push(`"${proc}" recovery guidelines pdf`);
+            });
+            
+            navigator.clipboard.writeText(queries.join('\n'));
+            alert('Queries copied to clipboard!');
+        }
+
+        function startCollection() {
+            if (selectedProcedures.length === 0) {
+                alert('Please select at least one procedure');
+                return;
+            }
+            
+            const queries = [];
+            selectedProcedures.forEach(proc => {
+                queries.push(`"${proc}" post operative care instructions pdf`);
+                queries.push(`"${proc}" recovery guidelines pdf`);
+            });
+            
+            const maxPdfs = document.getElementById('maxPdfs').value;
+            
+            // Show status
+            const statusDiv = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            statusDiv.style.display = 'block';
+            statusText.innerHTML = '⏳ Starting collection...';
+            statusDiv.style.background = '#fff3cd';
+            
+            // Send to API
+            fetch('http://localhost:8001/api/start-collection', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    search_queries: queries,
+                    max_pdfs: parseInt(maxPdfs)
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                statusText.innerHTML = '✅ Collection started! Running in background...';
+                statusDiv.style.background = '#d4edda';
+                
+                // Check status periodically
+                setTimeout(checkStatus, 5000);
+            })
+            .catch(error => {
+                statusText.innerHTML = '❌ Error: ' + error.message;
+                statusDiv.style.background = '#f8d7da';
+            });
+        }
+        
+        function checkStatus() {
+            fetch('http://localhost:8001/api/status')
+                .then(response => response.json())
+                .then(data => {
+                    const statusText = document.getElementById('statusText');
+                    if (data.is_running) {
+                        statusText.innerHTML = '🔄 Collection running... (check terminal for details)';
+                        setTimeout(checkStatus, 5000);
+                    } else {
+                        statusText.innerHTML = '✅ Collection complete!';
+                        checkHistory();
+                    }
+                });
+        }
+        
+        function checkHistory() {
+            fetch('http://localhost:8001/api/history')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const latest = data[0];
+                        const statusText = document.getElementById('statusText');
+                        statusText.innerHTML = `✅ Last run: ${latest.pdfs_collected || 0} PDFs collected, ${Math.round((latest.average_confidence || 0) * 100)}% avg confidence`;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>
