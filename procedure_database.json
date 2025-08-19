@@ -1,0 +1,353 @@
+{
+  "surgical_procedures": {
+    "orthopedic": {
+      "category": "Orthopedic Surgery",
+      "procedures": [
+        "Total Knee Replacement (TKR)",
+        "Total Hip Replacement (THR)",
+        "ACL Reconstruction",
+        "Rotator Cuff Repair",
+        "Spinal Fusion",
+        "Carpal Tunnel Release",
+        "Meniscus Repair",
+        "Shoulder Arthroscopy",
+        "Ankle Fracture Repair",
+        "Bunion Surgery",
+        "Trigger Finger Release",
+        "Tennis Elbow Surgery",
+        "Achilles Tendon Repair",
+        "Fracture Fixation",
+        "Joint Arthroscopy"
+      ],
+      "search_terms": [
+        "orthopedic post operative care",
+        "joint replacement recovery",
+        "bone surgery aftercare"
+      ]
+    },
+    "cardiac": {
+      "category": "Cardiac Surgery",
+      "procedures": [
+        "Coronary Artery Bypass (CABG)",
+        "Heart Valve Replacement",
+        "Pacemaker Implantation",
+        "Angioplasty and Stenting",
+        "Atrial Fibrillation Ablation",
+        "ICD Implantation",
+        "Heart Transplant",
+        "Aortic Aneurysm Repair",
+        "Mitral Valve Repair",
+        "TAVR Procedure"
+      ],
+      "search_terms": [
+        "cardiac surgery recovery",
+        "heart surgery post op care",
+        "cardiovascular procedure aftercare"
+      ]
+    },
+    "general_surgery": {
+      "category": "General Surgery",
+      "procedures": [
+        "Appendectomy",
+        "Cholecystectomy (Gallbladder Removal)",
+        "Hernia Repair",
+        "Colonoscopy with Polypectomy",
+        "Hemorrhoidectomy",
+        "Thyroidectomy",
+        "Mastectomy",
+        "Bowel Resection",
+        "Gastric Bypass",
+        "Sleeve Gastrectomy",
+        "Laparoscopic Surgery",
+        "Breast Biopsy",
+        "Skin Lesion Removal",
+        "Lipoma Removal"
+      ],
+      "search_terms": [
+        "general surgery post operative instructions",
+        "abdominal surgery recovery",
+        "laparoscopic surgery aftercare"
+      ]
+    },
+    "neurological": {
+      "category": "Neurosurgery",
+      "procedures": [
+        "Craniotomy",
+        "Brain Tumor Removal",
+        "Spinal Cord Surgery",
+        "Deep Brain Stimulation",
+        "Epilepsy Surgery",
+        "Chiari Decompression",
+        "Lumbar Puncture",
+        "VP Shunt Placement",
+        "Microdiscectomy",
+        "Laminectomy",
+        "Nerve Decompression",
+        "Aneurysm Clipping"
+      ],
+      "search_terms": [
+        "neurosurgery post operative care",
+        "brain surgery recovery",
+        "spine surgery aftercare"
+      ]
+    },
+    "urological": {
+      "category": "Urology",
+      "procedures": [
+        "Prostatectomy",
+        "TURP (Transurethral Resection)",
+        "Kidney Stone Removal",
+        "Cystoscopy",
+        "Vasectomy",
+        "Hydrocele Repair",
+        "Bladder Surgery",
+        "Nephrectomy",
+        "Penile Implant",
+        "Ureteroscopy",
+        "Bladder Sling",
+        "Circumcision"
+      ],
+      "search_terms": [
+        "urology post operative care",
+        "prostate surgery recovery",
+        "urological procedure aftercare"
+      ]
+    },
+    "gynecological": {
+      "category": "Gynecological Surgery",
+      "procedures": [
+        "Hysterectomy",
+        "C-Section",
+        "Ovarian Cyst Removal",
+        "Endometrial Ablation",
+        "Myomectomy",
+        "Tubal Ligation",
+        "D&C Procedure",
+        "Laparoscopy",
+        "Colposcopy",
+        "Cervical Cone Biopsy",
+        "Pelvic Floor Repair",
+        "IUD Insertion"
+      ],
+      "search_terms": [
+        "gynecological surgery recovery",
+        "women's surgery post op care",
+        "obstetric procedure aftercare"
+      ]
+    },
+    "ent": {
+      "category": "ENT (Ear, Nose, Throat)",
+      "procedures": [
+        "Tonsillectomy",
+        "Adenoidectomy",
+        "Septoplasty",
+        "Sinus Surgery (FESS)",
+        "Tympanoplasty",
+        "Stapedectomy",
+        "Cochlear Implant",
+        "Thyroid Surgery",
+        "Laryngoscopy",
+        "Turbinate Reduction",
+        "Ear Tube Insertion",
+        "Vocal Cord Surgery"
+      ],
+      "search_terms": [
+        "ENT surgery post operative care",
+        "sinus surgery recovery",
+        "throat surgery aftercare"
+      ]
+    },
+    "ophthalmic": {
+      "category": "Ophthalmology",
+      "procedures": [
+        "Cataract Surgery",
+        "LASIK",
+        "Glaucoma Surgery",
+        "Retinal Detachment Repair",
+        "Corneal Transplant",
+        "Pterygium Removal",
+        "Strabismus Surgery",
+        "Vitrectomy",
+        "Eyelid Surgery",
+        "Macular Degeneration Treatment",
+        "Diabetic Retinopathy Surgery",
+        "PRK Surgery"
+      ],
+      "search_terms": [
+        "eye surgery post operative care",
+        "cataract surgery recovery",
+        "vision surgery aftercare"
+      ]
+    },
+    "plastic_surgery": {
+      "category": "Plastic & Reconstructive Surgery",
+      "procedures": [
+        "Rhinoplasty",
+        "Breast Augmentation",
+        "Liposuction",
+        "Tummy Tuck",
+        "Facelift",
+        "Blepharoplasty",
+        "Breast Reduction",
+        "Brazilian Butt Lift",
+        "Neck Lift",
+        "Arm Lift",
+        "Thigh Lift",
+        "Skin Graft",
+        "Scar Revision",
+        "Cleft Lip/Palate Repair"
+      ],
+      "search_terms": [
+        "plastic surgery post operative care",
+        "cosmetic surgery recovery",
+        "reconstructive surgery aftercare"
+      ]
+    },
+    "dental": {
+      "category": "Oral & Maxillofacial Surgery",
+      "procedures": [
+        "Wisdom Teeth Extraction",
+        "Dental Implants",
+        "Root Canal",
+        "Tooth Extraction",
+        "Jaw Surgery",
+        "Gum Surgery",
+        "Bone Grafting",
+        "Sinus Lift",
+        "TMJ Surgery",
+        "Apicoectomy",
+        "Frenectomy",
+        "Crown Lengthening"
+      ],
+      "search_terms": [
+        "oral surgery post operative care",
+        "dental surgery recovery",
+        "tooth extraction aftercare"
+      ]
+    },
+    "vascular": {
+      "category": "Vascular Surgery",
+      "procedures": [
+        "Carotid Endarterectomy",
+        "Aneurysm Repair",
+        "Varicose Vein Surgery",
+        "Bypass Surgery",
+        "Thrombectomy",
+        "Angioplasty",
+        "AV Fistula Creation",
+        "Vein Stripping",
+        "Endovascular Repair",
+        "Peripheral Artery Bypass"
+      ],
+      "search_terms": [
+        "vascular surgery post operative care",
+        "vein surgery recovery",
+        "arterial surgery aftercare"
+      ]
+    },
+    "gastrointestinal": {
+      "category": "Gastrointestinal Surgery",
+      "procedures": [
+        "Colonoscopy",
+        "Endoscopy",
+        "Liver Resection",
+        "Pancreatic Surgery",
+        "Esophageal Surgery",
+        "Stomach Surgery",
+        "Intestinal Resection",
+        "Rectal Surgery",
+        "ERCP",
+        "Nissen Fundoplication",
+        "Gastrostomy Tube",
+        "Colostomy"
+      ],
+      "search_terms": [
+        "GI surgery post operative care",
+        "digestive surgery recovery",
+        "abdominal surgery aftercare"
+      ]
+    },
+    "thoracic": {
+      "category": "Thoracic Surgery",
+      "procedures": [
+        "Lobectomy",
+        "Lung Biopsy",
+        "Thoracotomy",
+        "VATS Surgery",
+        "Mediastinoscopy",
+        "Chest Tube Insertion",
+        "Lung Transplant",
+        "Pneumonectomy",
+        "Pleurodesis",
+        "Thymectomy"
+      ],
+      "search_terms": [
+        "thoracic surgery post operative care",
+        "lung surgery recovery",
+        "chest surgery aftercare"
+      ]
+    },
+    "pediatric": {
+      "category": "Pediatric Surgery",
+      "procedures": [
+        "Appendectomy (Pediatric)",
+        "Hernia Repair (Pediatric)",
+        "Orchiopexy",
+        "Pyloric Stenosis Repair",
+        "Cleft Lip/Palate Repair",
+        "Tonsillectomy (Pediatric)",
+        "Ear Tube Insertion",
+        "Circumcision (Pediatric)",
+        "Congenital Heart Surgery",
+        "Hydrocele Repair (Pediatric)"
+      ],
+      "search_terms": [
+        "pediatric surgery post operative care",
+        "children's surgery recovery",
+        "infant surgery aftercare"
+      ]
+    }
+  },
+  "common_search_modifiers": [
+    "post operative care instructions pdf",
+    "surgery recovery guidelines pdf",
+    "patient discharge instructions pdf",
+    "surgical aftercare pdf",
+    "post op care guide pdf",
+    "recovery instructions pdf",
+    "home care after surgery pdf",
+    "post surgical care pdf"
+  ],
+  "priority_procedures": [
+    "Total Knee Replacement",
+    "Total Hip Replacement",
+    "Cataract Surgery",
+    "Gallbladder Removal",
+    "Hernia Repair",
+    "Appendectomy",
+    "Cesarean Section",
+    "Hysterectomy",
+    "Tonsillectomy",
+    "Coronary Bypass",
+    "Colonoscopy",
+    "Wisdom Teeth Extraction"
+  ],
+  "search_strategy": {
+    "max_queries_per_run": 10,
+    "queries_per_procedure": 2,
+    "rotation_strategy": "round_robin",
+    "prioritize_common": true,
+    "include_hospital_names": [
+      "Mayo Clinic",
+      "Cleveland Clinic",
+      "Johns Hopkins",
+      "Mass General",
+      "UCLA Medical",
+      "Stanford Health",
+      "Mount Sinai",
+      "Cedars-Sinai",
+      "Northwestern Medicine",
+      "NYU Langone"
+    ]
+  }
+}

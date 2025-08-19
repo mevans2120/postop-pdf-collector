@@ -93,11 +93,10 @@ class AgentInterface:
         self.logger.info(f"Starting collection with queries: {search_queries}")
         
         # Create collector with custom settings
-        settings = Settings(
-            **self.settings.model_dump(),
-            max_pdfs_per_source=min(max_pdfs // len(search_queries), 10),
-            min_confidence_score=quality_threshold
-        )
+        settings_dict = self.settings.model_dump()
+        settings_dict['max_pdfs_per_source'] = min(max_pdfs // len(search_queries) if search_queries else 10, 10)
+        settings_dict['min_confidence_score'] = quality_threshold
+        settings = Settings(**settings_dict)
         
         async with PostOpPDFCollector(settings, use_database=True) as collector:
             result = await collector.run_collection(

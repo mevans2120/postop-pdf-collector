@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post-Op PDFs by Procedure</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #2d3748; 
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            color: #718096;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        .procedure-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        h2 { 
+            color: #2d3748;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .pdf-grid {
+            display: grid;
+            gap: 10px;
+        }
+        .pdf-item { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .pdf-item:hover {
+            background: #e9ecef;
+        }
+        .confidence { 
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .high { background: #d4edda; color: #155724; }
+        .medium { background: #fff3cd; color: #856404; }
+        .low { background: #f8d7da; color: #721c24; }
+        .filename { 
+            color: #4c51bf;
+            text-decoration: none;
+            flex: 1;
+            margin-right: 10px;
+        }
+        .filename:hover { text-decoration: underline; }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #edf2f7;
+            color: #4a5568;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Post-Operative Care PDFs</h1>
+            <div class="subtitle">Organized by Specific Procedures with Confidence Scores</div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value">278</div>
+                    <div class="stat-label">Total PDFs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">33</div>
+                    <div class="stat-label">Procedures</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">82%</div>
+                    <div class="stat-label">Avg Confidence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">154</div>
+                    <div class="stat-label">High Quality</div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="procedure-section">
+            <h2>ACL Reconstruction <span class="badge">6 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/ACL Reconstruction/[92%] acl-and-meniscus-repair-discharge-instructions.pdf" class="filename">acl-and-meniscus-repair-discharge-instructions.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/ACL Reconstruction/[88%] ACL%20%26%20MENISCUS%20Postop%20Instructions_Hagen.pdf" class="filename">ACL%20%26%20MENISCUS%20Postop%20Instructions_Hagen.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/ACL Reconstruction/[72%] Shah-ACL-Rehab-Protocol.pdf" class="filename">Shah-ACL-Rehab-Protocol.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/ACL Reconstruction/[70%] knee-acl-2020-bruce-md.pdf" class="filename">knee-acl-2020-bruce-md.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/ACL Reconstruction/[70%] Osuch-ACL-Rehab-Protocol.pdf" class="filename">Osuch-ACL-Rehab-Protocol.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/ACL Reconstruction/[70%] POSTOP-ACL-CHRISTIANO.pdf" class="filename">POSTOP-ACL-CHRISTIANO.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Aneurysm Repair <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Vascular Surgery/Aneurysm Repair/[70%] POSTOPERATIVE-ENDOVASCULAR-ANEURYSM-REPAIR-INSTRUCTIONS.pdf" class="filename">POSTOPERATIVE-ENDOVASCULAR-ANEURYSM-REPAIR-INSTRUCTIONS.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Angioplasty <span class="badge">2 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/Angioplasty/[96%] 1146-MesentericArteryAngioplastyAndStenting.pdf" class="filename">1146-MesentericArteryAngioplastyAndStenting.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/Angioplasty/[92%] CareafterCarotidArteryAngioplastyStenting.pdf" class="filename">CareafterCarotidArteryAngioplastyStenting.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Ankle Surgery <span class="badge">2 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Ankle Surgery/[90%] Chang-DC-Ankle-Fracture-Repair.pdf" class="filename">Chang-DC-Ankle-Fracture-Repair.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Ankle Surgery/[88%] ankle-fracture.pdf" class="filename">ankle-fracture.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Appendectomy <span class="badge">7 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="General Surgery/Appendectomy/[92%] Laparoscopic-Appendectomy-Post-Op-Handout-1.pdf" class="filename">Laparoscopic-Appendectomy-Post-Op-Handout-1.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Appendectomy/[92%] LapAppendectomy.pdf" class="filename">LapAppendectomy.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Appendectomy/[90%] PO_Laparoscopic-and-Open-Appendectomy.pdf" class="filename">PO_Laparoscopic-and-Open-Appendectomy.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Appendectomy/[76%] Appendectomy-Post-Op-1.pdf" class="filename">Appendectomy-Post-Op-1.pdf</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Appendectomy/[76%] SBMC-Appendectomy-Surgery-Recovery-Guide.pdf" class="filename">SBMC-Appendectomy-Surgery-Recovery-Guide.pdf</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/Appendectomy/[74%] Appendectomy.pdf" class="filename">Appendectomy.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Appendectomy/[66%] 2023-Post-Op-Appendectomy.pdf" class="filename">2023-Post-Op-Appendectomy.pdf</a>
+                    <span class="confidence medium">66%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Blepharoplasty <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Ophthalmology/Blepharoplasty/[72%] Blepharoplasty-postop.pdf" class="filename">Blepharoplasty-postop.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Breast Reconstruction <span class="badge">2 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Breast Reconstruction/[82%] if-hp-cancer-guide-br016-breast-reconstruction.pdf" class="filename">if-hp-cancer-guide-br016-breast-reconstruction.pdf</a>
+                    <span class="confidence medium">82%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Breast Reconstruction/[80%] Breast-reconstruction-total-masectomy-post-op-care-221118.pdf" class="filename">Breast-reconstruction-total-masectomy-post-op-care-221118.pd</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Bypass Surgery <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Vascular Surgery/Bypass Surgery/[92%] pr-44461-my-leg-bypass-surgery-guide-acc.pdf" class="filename">pr-44461-my-leg-bypass-surgery-guide-acc.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>C-Section <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/C-Section/[92%] 20230308_erc_csection_clinicalpathway_en.pdf" class="filename">20230308_erc_csection_clinicalpathway_en.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Carotid Endarterectomy <span class="badge">2 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Vascular Surgery/Carotid Endarterectomy/[96%] 340-CarotidEndarterectomyBooklet.pdf" class="filename">340-CarotidEndarterectomyBooklet.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/Carotid Endarterectomy/[76%] POSTOPERATIVE-CAROTID-ENDARTERECTOMY-INSTRUCTIONS.pdf" class="filename">POSTOPERATIVE-CAROTID-ENDARTERECTOMY-INSTRUCTIONS.pdf</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Carpal Tunnel Release <span class="badge">2 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Carpal Tunnel Release/[72%] carpal-tunnel-release-postop-protocol.pdf" class="filename">carpal-tunnel-release-postop-protocol.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Carpal Tunnel Release/[72%] MeyerNicholas_PostOpInstructions_CarpalTunnelRelease_2019-10.pdf" class="filename">MeyerNicholas_PostOpInstructions_CarpalTunnelRelease_2019-10</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Cataract Surgery <span class="badge">5 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Ophthalmology/Cataract Surgery/[88%] draft-version-cataract-guidelines_extended-document_05-07-2024.pdf" class="filename">draft-version-cataract-guidelines_extended-document_05-07-20</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Ophthalmology/Cataract Surgery/[74%] Instructions%20After%20Cataract%20Surgery_tcm75-158152.pdf" class="filename">Instructions%20After%20Cataract%20Surgery_tcm75-158152.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Ophthalmology/Cataract Surgery/[70%] Post_Op_Cataract_Sx_Combo_Drops_.pdf" class="filename">Post_Op_Cataract_Sx_Combo_Drops_.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Ophthalmology/Cataract Surgery/[70%] instructions-before-cataract-surgery.pdf" class="filename">instructions-before-cataract-surgery.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Ophthalmology/Cataract Surgery/[62%] Cataract%20Surgery%20Recovery%20Rehearsal%20Guide%2011-22.pdf" class="filename">Cataract%20Surgery%20Recovery%20Rehearsal%20Guide%2011-22.pd</a>
+                    <span class="confidence low">62%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Colonoscopy <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="GI Surgery/Colonoscopy/[80%] doc-colonoscopy_surveillance_after_crc_resection.pdf" class="filename">doc-colonoscopy_surveillance_after_crc_resection.pdf</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Coronary Artery Bypass <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/Coronary Artery Bypass/[100%] pr-47678---coronaryarterybypassguide.pdf" class="filename">pr-47678---coronaryarterybypassguide.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Facelift <span class="badge">3 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Facelift/[92%] Facelift-postop.pdf" class="filename">Facelift-postop.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Facelift/[88%] aftercare-facelift-neck-lift.pdf" class="filename">aftercare-facelift-neck-lift.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Ophthalmology/Facelift/[51%] POST-OP-FACELIFT.pdf" class="filename">POST-OP-FACELIFT.pdf</a>
+                    <span class="confidence low">51%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Gallbladder Removal <span class="badge">2 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="General Surgery/Gallbladder Removal/[84%] gall-bladder-removal.pdf" class="filename">gall-bladder-removal.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Gallbladder Removal/[76%] Laparoscopic_cholecystectomy_postop_instructions.pdf" class="filename">Laparoscopic_cholecystectomy_postop_instructions.pdf</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Hemorrhoidectomy <span class="badge">2 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="General Surgery/Hemorrhoidectomy/[92%] univ-colon-rectal-postop-instructions-anorectal-surgery.pdf" class="filename">univ-colon-rectal-postop-instructions-anorectal-surgery.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Hemorrhoidectomy/[82%] DOCN_Hemrhoidectomy-or-other-Rectal-Surgery.pdf" class="filename">DOCN_Hemrhoidectomy-or-other-Rectal-Surgery.pdf</a>
+                    <span class="confidence medium">82%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Hernia Repair <span class="badge">6 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="General Surgery/Hernia Repair/[96%] HiatalHerniaRepair.pdf" class="filename">HiatalHerniaRepair.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Hernia Repair/[96%] LAP-INGUINAL-HERNIA-REPAIR-POST-OP-INSTRUCTIONS-1.pdf" class="filename">LAP-INGUINAL-HERNIA-REPAIR-POST-OP-INSTRUCTIONS-1.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Hernia Repair/[87%] PRN00250-dst-making-a-decision-about-inguinal-hernia.pdf" class="filename">PRN00250-dst-making-a-decision-about-inguinal-hernia.pdf</a>
+                    <span class="confidence high">87%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Hernia Repair/[72%] Robotic-Incisional-Hernia-Repair-Post-Operative-Instructions-.pdf" class="filename">Robotic-Incisional-Hernia-Repair-Post-Operative-Instructions</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Hernia Repair/[70%] 2023-Post-Op-Inguinal-Hernia.pdf" class="filename">2023-Post-Op-Inguinal-Hernia.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Hernia Repair/[62%] ROBO-INGUINAL-HERNIA-REPAIR-GUIDELINES-1-PAGE.pdf" class="filename">ROBO-INGUINAL-HERNIA-REPAIR-GUIDELINES-1-PAGE.pdf</a>
+                    <span class="confidence low">62%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Hysterectomy <span class="badge">6 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/Hysterectomy/[96%] Post%20Operative%20Instructions%20-%20Laparoscopic%20Hysterectomy.pdf" class="filename">Post%20Operative%20Instructions%20-%20Laparoscopic%20Hystere</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/Hysterectomy/[88%] Hysterectomy.pdf" class="filename">Hysterectomy.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/Hysterectomy/[88%] Hysterectomy-TLH-ERAS-Patient-Guide.pdf" class="filename">Hysterectomy-TLH-ERAS-Patient-Guide.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/Hysterectomy/[74%] 38-H7B-%E2%80%93-Total-Laparoscopic-Hysterectomy-Recovery-v12.22.2021-1.pdf" class="filename">38-H7B-%E2%80%93-Total-Laparoscopic-Hysterectomy-Recovery-v1</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/Hysterectomy/[64%] Hysterectomy-Post.pdf" class="filename">Hysterectomy-Post.pdf</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/Hysterectomy/[47%] Hysterectomy-Recovery-Exercise-Guidelines.pdf" class="filename">Hysterectomy-Recovery-Exercise-Guidelines.pdf</a>
+                    <span class="confidence low">47%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Mastectomy <span class="badge">3 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Mastectomy/[92%] guide-to-mastectomy-with-te-eras-31023.pdf" class="filename">guide-to-mastectomy-with-te-eras-31023.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Mastectomy/[92%] mastectomy_postop_draft_LGM_20220425.pdf" class="filename">mastectomy_postop_draft_LGM_20220425.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Mastectomy/[84%] Mastectomy&AxillarySurgery.pdf" class="filename">Mastectomy&AxillarySurgery.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Meniscus Repair <span class="badge">10 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[96%] rmf-knee-meniscus-repair-post-operative-instructions-upd-2025.pdf" class="filename">rmf-knee-meniscus-repair-post-operative-instructions-upd-202</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[96%] meniscusrepairPO.pdf" class="filename">meniscusrepairPO.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[92%] PCL-Meniscus-Repair-Post-Op-Instruction.pdf" class="filename">PCL-Meniscus-Repair-Post-Op-Instruction.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[92%] meniscus-repair-post-op-instructions.pdf" class="filename">meniscus-repair-post-op-instructions.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[92%] Chang-DC-Knee-Meniscus-Repair.pdf" class="filename">Chang-DC-Knee-Meniscus-Repair.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[88%] Wulf_Meniscus_Repair_Discharge_Instructions_2019-08.pdf" class="filename">Wulf_Meniscus_Repair_Discharge_Instructions_2019-08.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[88%] post-op-meniscus-repair.pdf" class="filename">post-op-meniscus-repair.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[80%] rehabilitation-protocol-for-meniscus-repair.pdf" class="filename">rehabilitation-protocol-for-meniscus-repair.pdf</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[76%] Eastwood-meniscus-repair.pdf" class="filename">Eastwood-meniscus-repair.pdf</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Meniscus Repair/[47%] meniscus-repair-rehab-protocol.pdf" class="filename">meniscus-repair-rehab-protocol.pdf</a>
+                    <span class="confidence low">47%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Other Procedures <span class="badge">145 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[100%] smh-cardiac-surgery-patient-information.pdf" class="filename">smh-cardiac-surgery-patient-information.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[100%] s12630-016-0718-7.pdf" class="filename">s12630-016-0718-7.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[100%] biceps-tenodesis-discharge-instructions-pt-protocol.pdf" class="filename">biceps-tenodesis-discharge-instructions-pt-protocol.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[100%] 2023-CPG-on-the-Management-of-Atherosclerotic-Carotid-and-Vertebral-Artery-Disease.pdf" class="filename">2023-CPG-on-the-Management-of-Atherosclerotic-Carotid-and-Ve</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[100%] ncd103c1_Part1.pdf" class="filename">ncd103c1_Part1.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[100%] ame_guide.pdf" class="filename">ame_guide.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[96%] patient-guide-to-after-cardio-surgery-booklet_mph.pdf" class="filename">patient-guide-to-after-cardio-surgery-booklet_mph.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[96%] elbow-hand-booklet-2023.pdf" class="filename">elbow-hand-booklet-2023.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[96%] Your-Guide-to-Trigger-Finger-Surgery.pdf" class="filename">Your-Guide-to-Trigger-Finger-Surgery.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[96%] 168098.pdf" class="filename">168098.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[96%] hip-class-brochure-out.pdf" class="filename">hip-class-brochure-out.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[96%] knee-class-brochure.pdf" class="filename">knee-class-brochure.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[96%] som-2024-2025-82024.pdf" class="filename">som-2024-2025-82024.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[96%] clm104c04.pdf" class="filename">clm104c04.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[96%] ESVS-2024-AAA-Guidelines.pdf" class="filename">ESVS-2024-AAA-Guidelines.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Ophthalmology/[96%] english_2018_updated.pdf" class="filename">english_2018_updated.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[96%] cholecys.pdf" class="filename">cholecys.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[96%] total-joint-hip-discharge-english.pdf" class="filename">total-joint-hip-discharge-english.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[94%] Chapter-18-Post-procedure-management-complications-March-2-2018.pdf" class="filename">Chapter-18-Post-procedure-management-complications-March-2-2</a>
+                    <span class="confidence high">94%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[94%] guideline-disinfection-h.pdf" class="filename">guideline-disinfection-h.pdf</a>
+                    <span class="confidence high">94%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[94%] AHSBrochureFinal.pdf" class="filename">AHSBrochureFinal.pdf</a>
+                    <span class="confidence high">94%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[92%] s00268-021-06394-9.pdf" class="filename">s00268-021-06394-9.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] ossi-scoli-dc-instructions.pdf" class="filename">ossi-scoli-dc-instructions.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="GI Surgery/[92%] s13017-018-0162-9.pdf" class="filename">s13017-018-0162-9.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[92%] 2021-Coronary-Artery-Revascularization-Guideline-Slide-Set.pdf" class="filename">2021-Coronary-Artery-Revascularization-Guideline-Slide-Set.p</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[92%] 0976.pdf" class="filename">0976.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] mc2111-01.pdf" class="filename">mc2111-01.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] thp-weightbearing-as-tolerated.pdf" class="filename">thp-weightbearing-as-tolerated.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[92%] Your-Guide-to-Cardiac-Surgery_02-2025_a11y.pdf" class="filename">Your-Guide-to-Cardiac-Surgery_02-2025_a11y.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] Postop-instructions-5th-Metataral-Jones-Fracture-Fixation.pdf" class="filename">Postop-instructions-5th-Metataral-Jones-Fracture-Fixation.pd</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] hip-ORIF.pdf" class="filename">hip-ORIF.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] patella-ff-protocol.pdf" class="filename">patella-ff-protocol.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] postopachilles.pdf" class="filename">postopachilles.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] lateral-epicondylitis.pdf" class="filename">lateral-epicondylitis.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] latepl.pdf" class="filename">latepl.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] lateral-epicondylitis-tennis%20elbow-surgery.pdf" class="filename">lateral-epicondylitis-tennis%20elbow-surgery.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] 416851.pdf" class="filename">416851.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] A_Guide_to_Bunion_Correction_Surgery.pdf" class="filename">A_Guide_to_Bunion_Correction_Surgery.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] postop-mis-buniion-surgery-rehab-protocol.pdf" class="filename">postop-mis-buniion-surgery-rehab-protocol.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] Forefoot-Deformity-Correction.pdf" class="filename">Forefoot-Deformity-Correction.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] 5419-2-Bunion-Surgery.pdf" class="filename">5419-2-Bunion-Surgery.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] 26129.pdf" class="filename">26129.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[92%] 68f08a_8cec21aac8b347e48cf0a42b87b7a641.pdf" class="filename">68f08a_8cec21aac8b347e48cf0a42b87b7a641.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[92%] National-Clinical-Guideline-for-Stroke-2023.pdf" class="filename">National-Clinical-Guideline-for-Stroke-2023.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[92%] ESVS-2022-CVD-Guidelines.pdf" class="filename">ESVS-2022-CVD-Guidelines.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[92%] breast-invasive-patient.pdf" class="filename">breast-invasive-patient.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[92%] som107ap_l_ambulatory.pdf" class="filename">som107ap_l_ambulatory.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/[92%] post-operative-instructions-for-minimally-invasive-gynecologic-surgery.pdf" class="filename">post-operative-instructions-for-minimally-invasive-gynecolog</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[90%] Chang-DC-Achilles-Tendon-Repair.pdf" class="filename">Chang-DC-Achilles-Tendon-Repair.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[90%] achilles-tendon-repair-eng-upd.pdf" class="filename">achilles-tendon-repair-eng-upd.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/[90%] post_op_ctr.pdf" class="filename">post_op_ctr.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[90%] 200218_OSSC_Instructions_Post-Operative_Wisdom_Teeth_FINAL.pdf" class="filename">200218_OSSC_Instructions_Post-Operative_Wisdom_Teeth_FINAL.p</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[90%] s13017-017-0149-y.pdf" class="filename">s13017-017-0149-y.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] pd-maindocument-2022_web.pdf" class="filename">pd-maindocument-2022_web.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Vascular Surgery/[88%] ortho_guidelines.pdf" class="filename">ortho_guidelines.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] Schwartz-PostOp-AchillesTendonRepair.pdf" class="filename">Schwartz-PostOp-AchillesTendonRepair.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] achilles-tendon-repair-post-op-instructions-16dec16.pdf" class="filename">achilles-tendon-repair-post-op-instructions-16dec16.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] Achilles-Tendon-Repair-Post-Op.pdf" class="filename">Achilles-Tendon-Repair-Post-Op.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] achilles-repair.pdf" class="filename">achilles-repair.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/[88%] Achilles%20Repair%20Discharge%20Instructions.pdf" class="filename">Achilles%20Repair%20Discharge%20Instructions.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[88%] trigger-finger-post-op.pdf" class="filename">trigger-finger-post-op.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] Hallux%20valgus%20(bunion).pdf" class="filename">Hallux%20valgus%20(bunion).pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] Post-op-%20Instructions%20-Endoscopic%20Carpal%20Tunnel%20Release%20-Summit.pdf" class="filename">Post-op-%20Instructions%20-Endoscopic%20Carpal%20Tunnel%20Re</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[88%] aftercare-breast-augmentation.pdf" class="filename">aftercare-breast-augmentation.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/[88%] Rhinoplasty-Post-Operative-Instructions.pdf" class="filename">Rhinoplasty-Post-Operative-Instructions.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/[88%] Rhinoplasty-Post-op-Instructions.pdf" class="filename">Rhinoplasty-Post-op-Instructions.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[88%] Rhinoplasty-postop.pdf" class="filename">Rhinoplasty-postop.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[88%] 68f08a_55fac495e083426d80d28c5ed20dcf5c.pdf" class="filename">68f08a_55fac495e083426d80d28c5ed20dcf5c.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[88%] 68f08a_1c3036f7d501471c9294a4b0a470c0e0.pdf" class="filename">68f08a_1c3036f7d501471c9294a4b0a470c0e0.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/[88%] 8581.00.pdf" class="filename">8581.00.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[88%] Post-op-instructions-5-2016.pdf" class="filename">Post-op-instructions-5-2016.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[88%] jbmr_4691.pdf" class="filename">jbmr_4691.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/[88%] recovery_guide_following_pelvic_surgery.pdf" class="filename">recovery_guide_following_pelvic_surgery.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Vascular Surgery/[88%] Recovery_Guide_English_Updated_RV3.pdf" class="filename">Recovery_Guide_English_Updated_RV3.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[88%] hip-exercises-print-guide.pdf" class="filename">hip-exercises-print-guide.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[87%] pr-44459-my-angiogram-guide-acc.pdf" class="filename">pr-44459-my-angiogram-guide-acc.pdf</a>
+                    <span class="confidence high">87%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[87%] app.pdf" class="filename">app.pdf</a>
+                    <span class="confidence high">87%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[87%] groin_hernia.pdf" class="filename">groin_hernia.pdf</a>
+                    <span class="confidence high">87%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[86%] s12891-016-1133-5.pdf" class="filename">s12891-016-1133-5.pdf</a>
+                    <span class="confidence high">86%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[86%] 9pscssicurrent.pdf" class="filename">9pscssicurrent.pdf</a>
+                    <span class="confidence high">86%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/[86%] Postoperative-Instructions-Rhino.pdf" class="filename">Postoperative-Instructions-Rhino.pdf</a>
+                    <span class="confidence high">86%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/[86%] penn-neurocritical-care-guide-04.07.2020.pdf" class="filename">penn-neurocritical-care-guide-04.07.2020.pdf</a>
+                    <span class="confidence high">86%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[84%] DCR-tics-CPG-2020.pdf" class="filename">DCR-tics-CPG-2020.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[84%] Wojcik_Structured%20Operative%20Autonomy_JACS%202017.pdf" class="filename">Wojcik_Structured%20Operative%20Autonomy_JACS%202017.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/[84%] PIIS0090825823001804.pdf" class="filename">PIIS0090825823001804.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[84%] pr-20255---atrial-fibrillation-catheter-acc.pdf" class="filename">pr-20255---atrial-fibrillation-catheter-acc.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[84%] Rhinoplasty-Postoperative-Care.pdf" class="filename">Rhinoplasty-Postoperative-Care.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[84%] Rhinoplasty.pdf" class="filename">Rhinoplasty.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[84%] ALP-Post-Op_Instructions-Dental_Implants.pdf" class="filename">ALP-Post-Op_Instructions-Dental_Implants.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[84%] anesthesia_and_monitoring_guidelines_final.pdf" class="filename">anesthesia_and_monitoring_guidelines_final.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/[84%] s41598-023-50633-z.pdf" class="filename">s41598-023-50633-z.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[84%] knee-exercises-print-guide.pdf" class="filename">knee-exercises-print-guide.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/[84%] SAFE-Care-Spay-Neuter-Post-Operative-Care-Instructions-2020.pdf" class="filename">SAFE-Care-Spay-Neuter-Post-Operative-Care-Instructions-2020.</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/[82%] pdf-193602-116156" class="filename">pdf-193602-116156</a>
+                    <span class="confidence medium">82%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[82%] FFS%2021471681%20ENT%20Rhinoplasty%20After%20Surgery%20Booklet%20d4%20%281%29%20updated%205.4.20.pdf" class="filename">FFS%2021471681%20ENT%20Rhinoplasty%20After%20Surgery%20Bookl</a>
+                    <span class="confidence medium">82%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/[82%] Life-After-Stroke-Guide_7819.pdf" class="filename">Life-After-Stroke-Guide_7819.pdf</a>
+                    <span class="confidence medium">82%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[80%] rehabilitation-protocol-for-achilles-tendon-repair.pdf" class="filename">rehabilitation-protocol-for-achilles-tendon-repair.pdf</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[80%] Your.Bunion.Guide.pdf" class="filename">Your.Bunion.Guide.pdf</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[80%] FB863Ex37.pdf" class="filename">FB863Ex37.pdf</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[80%] DOM_DGIM-FY20_Annual_Report.pdf" class="filename">DOM_DGIM-FY20_Annual_Report.pdf</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[80%] e_avulsion.pdf" class="filename">e_avulsion.pdf</a>
+                    <span class="confidence medium">80%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[77%] 5fec6328136f69.87151047.pdf" class="filename">5fec6328136f69.87151047.pdf</a>
+                    <span class="confidence medium">77%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[76%] 74c2c0dd3edca37b2f2205acd89a6a50post-op-care-instructions.pdf" class="filename">74c2c0dd3edca37b2f2205acd89a6a50post-op-care-instructions.pd</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[76%] 261420.pdf" class="filename">261420.pdf</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[74%] aftercare-genioplasty.pdf" class="filename">aftercare-genioplasty.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[74%] aftercare-brachioplasty.pdf" class="filename">aftercare-brachioplasty.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[74%] ALP-Post-Op_Instructions-Orthothic.pdf" class="filename">ALP-Post-Op_Instructions-Orthothic.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[74%] 261421.pdf" class="filename">261421.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[73%] hallux-valgus-patient-info-guide-new.pdf" class="filename">hallux-valgus-patient-info-guide-new.pdf</a>
+                    <span class="confidence medium">73%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/[72%] Trigger-Finger-Post-Op.pdf" class="filename">Trigger-Finger-Post-Op.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[72%] crow-trigger-finger-release-post-op.pdf" class="filename">crow-trigger-finger-release-post-op.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[72%] trigger-finger-release-postop-protocol.pdf" class="filename">trigger-finger-release-postop-protocol.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[72%] how-can-i-recover-from-heart-surgery.pdf" class="filename">how-can-i-recover-from-heart-surgery.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/[72%] LumpectomyPMInstructions.pdf" class="filename">LumpectomyPMInstructions.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[72%] Laparoscopic%20Inguinal%20Hernia%20Repair%208-12_tcm75-618841.pdf" class="filename">Laparoscopic%20Inguinal%20Hernia%20Repair%208-12_tcm75-61884</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[71%] s41598-022-07146-y.pdf" class="filename">s41598-022-07146-y.pdf</a>
+                    <span class="confidence medium">71%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[70%] Pulley-Quadrieps-Tendon-Rupture-Postop-Instructions.pdf" class="filename">Pulley-Quadrieps-Tendon-Rupture-Postop-Instructions.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Uncategorized/[70%] postop-instructions-endo-ctr-final.pdf" class="filename">postop-instructions-endo-ctr-final.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="GI Surgery/[70%] 261417.pdf" class="filename">261417.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[70%] distal-biceps-tendon-repair.pdf" class="filename">distal-biceps-tendon-repair.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[68%] 07cb6d_7b0f89950c83471b9f5ba341b5074fe0.pdf" class="filename">07cb6d_7b0f89950c83471b9f5ba341b5074fe0.pdf</a>
+                    <span class="confidence medium">68%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Urology/[66%] gtg-46.pdf" class="filename">gtg-46.pdf</a>
+                    <span class="confidence medium">66%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[65%] ASMBS-IFSO-Guidelines-2022-PIIS1550728922006414.pdf" class="filename">ASMBS-IFSO-Guidelines-2022-PIIS1550728922006414.pdf</a>
+                    <span class="confidence medium">65%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[65%] R59SOMA.pdf" class="filename">R59SOMA.pdf</a>
+                    <span class="confidence medium">65%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[64%] lhmc-achilles-tendon-rupture-repair-protocol.pdf" class="filename">lhmc-achilles-tendon-rupture-repair-protocol.pdf</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[64%] BEST%20trigger%20finger%20PUBLISHED(1).pdf" class="filename">BEST%20trigger%20finger%20PUBLISHED(1).pdf</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[64%] copy_of_CTROPENProtocolandHEP.pdf" class="filename">copy_of_CTROPENProtocolandHEP.pdf</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Gynecological Surgery/[64%] 6221SN%20Comprehensive%20Womens%20brochure%20MSSN%20update_v7.pdf" class="filename">6221SN%20Comprehensive%20Womens%20brochure%20MSSN%20update_v</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[64%] aftercare-gynecomastia.pdf" class="filename">aftercare-gynecomastia.pdf</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[64%] aftercare-abdominoplasty.pdf" class="filename">aftercare-abdominoplasty.pdf</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[62%] 200218_OSSC_Instructions_General_Post-Operative_FINAL.pdf" class="filename">200218_OSSC_Instructions_General_Post-Operative_FINAL.pdf</a>
+                    <span class="confidence low">62%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[62%] 200218_OSSC_Instructions_Post-Operative_Dental_Implant_Bone_Grafting_FINAL.pdf" class="filename">200218_OSSC_Instructions_Post-Operative_Dental_Implant_Bone_</a>
+                    <span class="confidence low">62%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/[61%] Access-to-Dental-Care-Report-Special-Needs-General%20Anesthesia.pdf" class="filename">Access-to-Dental-Care-Report-Special-Needs-General%20Anesthe</a>
+                    <span class="confidence low">61%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[59%] 1472-6955-12-23.pdf" class="filename">1472-6955-12-23.pdf</a>
+                    <span class="confidence low">59%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/[59%] 59553%20CTMS%20Pt%20Hndbk_interactive%20web.pdf" class="filename">59553%20CTMS%20Pt%20Hndbk_interactive%20web.pdf</a>
+                    <span class="confidence low">59%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[56%] SHC-Surgical-Prophylaxis-ABX-Guideline.pdf" class="filename">SHC-Surgical-Prophylaxis-ABX-Guideline.pdf</a>
+                    <span class="confidence low">56%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Vascular Surgery/[56%] 40003rB-UltraGuideTFR-Instructions-for-Use.pdf" class="filename">40003rB-UltraGuideTFR-Instructions-for-Use.pdf</a>
+                    <span class="confidence low">56%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Cardiac Surgery/[55%] quick_contact_directory.pdf" class="filename">quick_contact_directory.pdf</a>
+                    <span class="confidence low">55%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="General Surgery/[53%] 99151403177386059.pdf" class="filename">99151403177386059.pdf</a>
+                    <span class="confidence low">53%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[51%] 00006416-201901000-00004.pdf" class="filename">00006416-201901000-00004.pdf</a>
+                    <span class="confidence low">51%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Ophthalmology/[51%] clm104c14.pdf" class="filename">clm104c14.pdf</a>
+                    <span class="confidence low">51%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[47%] 36545880a46e0f8db8d0d37824fb71a10a088165.pdf" class="filename">36545880a46e0f8db8d0d37824fb71a10a088165.pdf</a>
+                    <span class="confidence low">47%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[47%] Surgical-society-newsletter-spring-2017.pdf" class="filename">Surgical-society-newsletter-spring-2017.pdf</a>
+                    <span class="confidence low">47%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[47%] team-ovw-webinar-transcript.pdf" class="filename">team-ovw-webinar-transcript.pdf</a>
+                    <span class="confidence low">47%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/[47%] cjr-providerfs-finalrule.pdf" class="filename">cjr-providerfs-finalrule.pdf</a>
+                    <span class="confidence low">47%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Rotator Cuff Repair <span class="badge">10 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[100%] February%202016%20-%20Postoperative%20Shoulder%20English.pdf" class="filename">February%202016%20-%20Postoperative%20Shoulder%20English.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[94%] POST-OP-shoulder-rotator-cuff-repair-Packet.pdf" class="filename">POST-OP-shoulder-rotator-cuff-repair-Packet.pdf</a>
+                    <span class="confidence high">94%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[92%] shoulder-repair-post-op-instructions-26Nov18.pdf" class="filename">shoulder-repair-post-op-instructions-26Nov18.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[92%] rtc-labral-repair-post-op.pdf" class="filename">rtc-labral-repair-post-op.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[92%] shoulder-scope-generic.pdf" class="filename">shoulder-scope-generic.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[92%] Rotator-Cuff-Repair.pdf" class="filename">Rotator-Cuff-Repair.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[84%] FINAL%20-%20Post-op%20Shoulder%20Rehabilitation%20Protocol.pdf" class="filename">FINAL%20-%20Post-op%20Shoulder%20Rehabilitation%20Protocol.p</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[82%] LARGE-ROTATOR-CUFF-REPAIR-PROTOCOL-November-2015.pdf" class="filename">LARGE-ROTATOR-CUFF-REPAIR-PROTOCOL-November-2015.pdf</a>
+                    <span class="confidence medium">82%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[64%] comprehensive-guide-to-recovery-from-rotator-cuff-surgery.pdf" class="filename">comprehensive-guide-to-recovery-from-rotator-cuff-surgery.pd</a>
+                    <span class="confidence low">64%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Rotator Cuff Repair/[62%] rehabilitation-protocol-for-rotator-cuff-tear-large-to-massive-tear.pdf" class="filename">rehabilitation-protocol-for-rotator-cuff-tear-large-to-massi</a>
+                    <span class="confidence low">62%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Septoplasty <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Septoplasty/[92%] Clinical%20Practice%20Guideline-%20Improving%20Nasal%20Form%20and%20Function%20after%20Rhinoplasty.pdf" class="filename">Clinical%20Practice%20Guideline-%20Improving%20Nasal%20Form%</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Sinus Surgery <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Sinus Surgery/[72%] FESS-PatientsGuidePostop.pdf" class="filename">FESS-PatientsGuidePostop.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Spinal Fusion <span class="badge">7 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Neurosurgery/Spinal Fusion/[96%] spine-center-pre-op-educational-packet.pdf" class="filename">spine-center-pre-op-educational-packet.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Spinal Fusion/[96%] spinal-fusion-surgery-what-to-expec.pdf" class="filename">spinal-fusion-surgery-what-to-expec.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Spinal Fusion/[96%] spine-surgery-guide-bayview.pdf" class="filename">spine-surgery-guide-bayview.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/Spinal Fusion/[92%] Patient%20Discharge-SpinalFusion.3.31.17.pdf" class="filename">Patient%20Discharge-SpinalFusion.3.31.17.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Spinal Fusion/[88%] Spinal-Fusion.pdf" class="filename">Spinal-Fusion.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/Spinal Fusion/[84%] LumbarSpinalFusion.pdf" class="filename">LumbarSpinalFusion.pdf</a>
+                    <span class="confidence medium">84%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Spinal Fusion/[74%] discharge-instructions-lumbar-spinal-fusion.pdf" class="filename">discharge-instructions-lumbar-spinal-fusion.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Thyroidectomy <span class="badge">5 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Thyroidectomy/[92%] ThyroidectomyParathyroidectomy-postop.pdf" class="filename">ThyroidectomyParathyroidectomy-postop.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Thyroidectomy/[90%] Post-operative-Instructions-for-Thyroidectomy.pdf" class="filename">Post-operative-Instructions-for-Thyroidectomy.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Thyroidectomy/[88%] pl-1083.1-thyroid-surgery-your-recovery-journey.pdf" class="filename">pl-1083.1-thyroid-surgery-your-recovery-journey.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Thyroidectomy/[74%] thyroidectomy-postopdoc.pdf" class="filename">thyroidectomy-postopdoc.pdf</a>
+                    <span class="confidence medium">74%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Thyroidectomy/[56%] GIRFT-best-practice-thyroidectomy-Final-20220830.pdf" class="filename">GIRFT-best-practice-thyroidectomy-Final-20220830.pdf</a>
+                    <span class="confidence low">56%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Tonsillectomy <span class="badge">3 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Tonsillectomy/[72%] Tonsillectomy-post-op-SCENT-adults.pdf" class="filename">Tonsillectomy-post-op-SCENT-adults.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Tonsillectomy/[70%] Tonsillectomy_%26_Adenoidectomy_MDO_tcm75-155325.pdf" class="filename">Tonsillectomy_%26_Adenoidectomy_MDO_tcm75-155325.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Tonsillectomy/[70%] Post-op-Tonsillectomy.pdf" class="filename">Post-op-Tonsillectomy.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Tooth Extraction <span class="badge">5 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Oral Surgery/Tooth Extraction/[90%] nice-review-of-guidance-on-wisdom-teeth-extraction-fds-response-with-appendices.pdf" class="filename">nice-review-of-guidance-on-wisdom-teeth-extraction-fds-respo</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/Tooth Extraction/[90%] wisdom-tooth-extraction.pdf" class="filename">wisdom-tooth-extraction.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/Tooth Extraction/[90%] post-operative-care-for-extractions.pdf" class="filename">post-operative-care-for-extractions.pdf</a>
+                    <span class="confidence high">90%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/Tooth Extraction/[62%] ALP-Post-Op_Instructions-Wisdom_Teeth_Extraction.pdf" class="filename">ALP-Post-Op_Instructions-Wisdom_Teeth_Extraction.pdf</a>
+                    <span class="confidence low">62%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/Tooth Extraction/[55%] ALP-Post-Op_Instructions-Tooth_Extraction.pdf" class="filename">ALP-Post-Op_Instructions-Tooth_Extraction.pdf</a>
+                    <span class="confidence low">55%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Total Hip Replacement <span class="badge">22 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[100%] shoulder-arthroscopy-discharge-instructions.pdf" class="filename">shoulder-arthroscopy-discharge-instructions.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[100%] arthroscopic-stabilization-discharge-instructions-pt-protocol.pdf" class="filename">arthroscopic-stabilization-discharge-instructions-pt-protoco</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[100%] arthroscopic_rotator_cuff_repair.pdf" class="filename">arthroscopic_rotator_cuff_repair.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[96%] Ankle-or-Subtalar-Joint-Arthroscopy.pdf" class="filename">Ankle-or-Subtalar-Joint-Arthroscopy.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[96%] Palsis-Shoulder-Arthroscopy-Post-Op-Instructions.pdf" class="filename">Palsis-Shoulder-Arthroscopy-Post-Op-Instructions.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[96%] arthroscopic-meniscus-repair.pdf" class="filename">arthroscopic-meniscus-repair.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[96%] knee-arthroscopy-and-meniscus-repair-discharge-instructions.pdf" class="filename">knee-arthroscopy-and-meniscus-repair-discharge-instructions.</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[96%] Total-Hip-Replacement-Handbook%20RUHS%20Final.pdf" class="filename">Total-Hip-Replacement-Handbook%20RUHS%20Final.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[96%] THA-Protocol-2019.pdf" class="filename">THA-Protocol-2019.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[92%] Total-Hip-Replacement-Post-op-instruction.pdf" class="filename">Total-Hip-Replacement-Post-op-instruction.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[92%] shoulder-arthroscopy-post-op.pdf" class="filename">shoulder-arthroscopy-post-op.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[92%] Total-Hip-Replacement.pdf" class="filename">Total-Hip-Replacement.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[88%] Discharge_THR.pdf" class="filename">Discharge_THR.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Oral Surgery/Total Hip Replacement/[88%] gwswisdomteethremoval.pdf" class="filename">gwswisdomteethremoval.pdf</a>
+                    <span class="confidence high">88%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[87%] nyulh-total-hip-surgery-booklet.pdf" class="filename">nyulh-total-hip-surgery-booklet.pdf</a>
+                    <span class="confidence high">87%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Plastic Surgery/Total Hip Replacement/[82%] CTMSPatientHandbook.pdf" class="filename">CTMSPatientHandbook.pdf</a>
+                    <span class="confidence medium">82%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="GI Surgery/Total Hip Replacement/[76%] Healy-Hip-Arthroscopy-Post-Op-Instructions.pdf" class="filename">Healy-Hip-Arthroscopy-Post-Op-Instructions.pdf</a>
+                    <span class="confidence medium">76%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[70%] Postoperative-Instructions-for-Shoulder-Arthroscopy-with-Rotator-Cuff-Repair.pdf" class="filename">Postoperative-Instructions-for-Shoulder-Arthroscopy-with-Rot</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="ENT Surgery/Total Hip Replacement/[70%] 2021-THROAT-SURGERY-post-op-instructions-TONSILLECTOMY.pdf" class="filename">2021-THROAT-SURGERY-post-op-instructions-TONSILLECTOMY.pdf</a>
+                    <span class="confidence medium">70%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[67%] throwers-surgery.pdf" class="filename">throwers-surgery.pdf</a>
+                    <span class="confidence medium">67%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[66%] total-hip-arthroplasty-cpg-update-2022.pdf" class="filename">total-hip-arthroplasty-cpg-update-2022.pdf</a>
+                    <span class="confidence medium">66%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Hip Replacement/[42%] shoulder-arthroscopic-rct-repair-protocol-hybrid-patient-therapist.pdf" class="filename">shoulder-arthroscopic-rct-repair-protocol-hybrid-patient-the</a>
+                    <span class="confidence low">42%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Total Knee Replacement <span class="badge">11 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[100%] total-knee-replacement-patient-guide.pdf" class="filename">total-knee-replacement-patient-guide.pdf</a>
+                    <span class="confidence high">100%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[96%] TKA-Protocol-2019.pdf" class="filename">TKA-Protocol-2019.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[96%] Knee-Replacement-Surgery-Maximizing-Your-New-Knee.pdf" class="filename">Knee-Replacement-Surgery-Maximizing-Your-New-Knee.pdf</a>
+                    <span class="confidence high">96%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[92%] Total-Knee-Post-Op.pdf" class="filename">Total-Knee-Post-Op.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[92%] Total-Knee-Replacement.pdf" class="filename">Total-Knee-Replacement.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[92%] nyulh-total-knee-surgery-booklet.pdf" class="filename">nyulh-total-knee-surgery-booklet.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[72%] total-knee-replacement.pdf" class="filename">total-knee-replacement.pdf</a>
+                    <span class="confidence medium">72%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[68%] 6-total-knee-arthroplasty-rehabilitation-guideline.pdf" class="filename">6-total-knee-arthroplasty-rehabilitation-guideline.pdf</a>
+                    <span class="confidence medium">68%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[56%] TKR-Protocol-Final.pdf" class="filename">TKR-Protocol-Final.pdf</a>
+                    <span class="confidence low">56%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Orthopedic Surgery/Total Knee Replacement/[55%] TKA%20Rehab%20Protocol.pdf" class="filename">TKA%20Rehab%20Protocol.pdf</a>
+                    <span class="confidence low">55%</span>
+                </div>
+            
+                <div class="pdf-item">
+                    <a href="Neurosurgery/Total Knee Replacement/[48%] knee-tkr-protocol-bwh.pdf" class="filename">knee-tkr-protocol-bwh.pdf</a>
+                    <span class="confidence low">48%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Varicose Veins <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Vascular Surgery/Varicose Veins/[56%] post-operative-instructions-varicose-vein-surgery.pdf" class="filename">post-operative-instructions-varicose-vein-surgery.pdf</a>
+                    <span class="confidence low">56%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="procedure-section">
+            <h2>Wisdom Teeth <span class="badge">1 PDFs</span></h2>
+            <div class="pdf-grid">
+        
+                <div class="pdf-item">
+                    <a href="Oral Surgery/Wisdom Teeth/[92%] Smart-Guide-to-wisdom-Teeth.pdf" class="filename">Smart-Guide-to-wisdom-Teeth.pdf</a>
+                    <span class="confidence high">92%</span>
+                </div>
+            
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
