@@ -231,7 +231,7 @@ jobs:
           pydoc-markdown -m postop_collector > docs/api/reference.md
       
       - name: Upload documentation artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: documentation
           path: docs/
